@@ -12,10 +12,10 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 
 @Configuration
 public class S3Config {
-    @Value("AKIAVRUVS2JV36PW367T")
+    @Value("AKIA4MTWNSXA4VOFRXX5")
     private String awsAccesskey;
 
-    @Value("IUu63J0bA3Yd1bGYdn6/9hffcVQrLX00L54PRWAV")
+    @Value("UlqAriN51pqyjL/6er5T7rjx3Db3pQQiZovfAAcw")
     private String awsSecretkey;
 
     @Value("ap-northeast-2")
