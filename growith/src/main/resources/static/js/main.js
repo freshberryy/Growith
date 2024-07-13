@@ -16,14 +16,21 @@
     new WOW().init();
 
 
-    // Sticky Navbar
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
-        } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
-        }
-    });
+    if ($(this).scrollTop() > 45) {
+        $('.navbar').addClass('sticky-top shadow-sm');
+        
+        // 스크롤 후 로고 이미지 변경 (블루로)
+        $('.whale-logo').attr('src', 'img/growith_logo_bluewhale.png'); // 고래 로고
+        $('.main-logo').attr('src', 'img/growith_logo_blue.png'); // 일반 로고
+    } else {
+        $('.navbar').removeClass('sticky-top shadow-sm');
+        
+        // 기본 로고 이미지 (흰색)
+        $('.whale-logo').attr('src', 'img/growith_logo_whitewhale.png'); // 고래 로고
+        $('.main-logo').attr('src', 'img/growith_logo_white.png'); // 일반 로고
+    	}
+	});
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
