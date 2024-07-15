@@ -1,5 +1,6 @@
-package com.example.growith;
+package com.example.growith.customerservice.inquery;
 
+import com.example.growith.customerservice.PhoneNumber;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

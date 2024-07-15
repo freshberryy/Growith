@@ -1,4 +1,4 @@
-package com.example.growith.support;
+package com.example.growith.customerservice.notice;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RequestMapping("/support")
 @Controller
-public class SupportController {
+public class NoticeController {
 	
 	@GetMapping("/announcements")
 	public String announcements() {
