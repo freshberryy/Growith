@@ -321,14 +321,19 @@ h6,
 
 .service-item .service-icon {
     margin-bottom: 30px;
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--primary);
+    background: #ffffff;;
     border-radius: 2px;
-    transform: rotate(-45deg);
+    border-radius: 0;
+}
+
+.service-icon img {
+    width: 80%; /* 이미지 크기 조정 (필요에 따라 조정) */
+    height: auto; /* 비율 유지 */
 }
 
 .service-item .service-icon i {
