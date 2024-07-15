@@ -1,4 +1,4 @@
-package com.example.growith;
+package com.example.growith.customerservice.inquery;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

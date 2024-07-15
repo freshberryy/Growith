@@ -1,4 +1,4 @@
-package com.example.growith;
+package com.example.growith.introduction;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,6 +1,8 @@
-package com.example.growith;
+package com.example.growith.customerservice.notice;
 
 import java.time.LocalDateTime;
+
+import com.example.growith.customerservice.Member;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,9 +12,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
+//공지사항 entity
 @Data
 @Entity
-public class Faq {
+public class Notice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -22,8 +25,12 @@ public class Faq {
 	@Column(columnDefinition="TEXT")
 	private String content;
 	
-	@ManyToOne
-	private Member author;
+	//파일 이름과 경로 저장
+	private String fileName;
+    private String filePath;
+	
+    @ManyToOne
+	private Member author; //외래키
 	
 	private LocalDateTime date;
 }

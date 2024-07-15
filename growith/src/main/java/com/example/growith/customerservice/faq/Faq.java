@@ -1,9 +1,8 @@
-package com.example.growith.support;
+package com.example.growith.customerservice.faq;
 
 import java.time.LocalDateTime;
 
-import com.example.growith.Member;
-
+import com.example.growith.customerservice.Member;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,10 +11,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
-//공지사항 entity
 @Data
 @Entity
-public class Support {
+public class Faq {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -25,11 +23,7 @@ public class Support {
 	@Column(columnDefinition="TEXT")
 	private String content;
 	
-	//파일 이름과 경로 저장
-	private String fileName;
-    private String filePath;
-	
-    @ManyToOne
+	@ManyToOne
 	private Member author;
 	
 	private LocalDateTime date;
