@@ -491,3 +491,45 @@ h6,
         margin-bottom: -75px;
     }
 }
+
+
+/*** timeline ***/
+    .timeline {
+        position: relative;
+        padding: 20px 0;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 25%; /* Adjusted to move the main timeline line to the left */
+        width: 4px;
+        background: #e9ecef;
+    }
+    .timeline-item {
+        position: relative;
+        margin: 20px 0;
+        padding-left: 25%; /* Adjusted to match the position of the main timeline line */
+        clear: both;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -40px; /* Adjusted to move the line closer to the main timeline line */
+        width: 4px;
+        height: 100px; /* Adjust this value to extend the line length */
+        background: #007bff;
+    }
+    .timeline-date {
+        position: absolute;
+        top: 0;
+        left: -60px; /* Adjusted to align the date with the moved line */
+        width: 100px;
+        text-align: right;
+    }
+    .timeline-content {
+        margin-left: 20px;
+        width: 70%;
+    }
