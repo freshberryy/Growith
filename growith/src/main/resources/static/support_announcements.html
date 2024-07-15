@@ -44,6 +44,26 @@
 	      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
 	      defer
 	    ></script>
+		
+		
+		<!-- css 2번쨰 -->
+		    <!-- Bootstrap core CSS -->
+		    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		    <!-- Additional CSS Files -->
+		    <link rel="stylesheet" href="assets/css/fontawesome.css">
+		    <link rel="stylesheet" href="assets/css/templatemo-574-mexant.css">
+		    <link rel="stylesheet" href="assets/css/owl.css">
+		    <link rel="stylesheet" href="assets/css/animate.css">
+		    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+		<!--
+
+		TemplateMo 574 Mexant
+
+		https://templatemo.com/tm-574-mexant
+
+		-->
+
 
 	
 </head>
@@ -146,161 +166,55 @@
 
 
     <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
-	<div class="col-12 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-
-		<div>
-		    <div class="py-4 text-gray-500 dark:text-gray-400">
-		      <a
-		        class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-		        href="#"
-		      >
-		        공지사항
-		      </a>
-		    
-		      <ul>
-		  
-		   <br><br><br>
-
-		        <li class="relative px-4 py-3">
-		          <button
-		            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-		            @click="togglePagesMenu"
-		            aria-haspopup="true"
-		          >안녕하세요.
-		            <svg
-		              class="w-4 h-4"
-		              aria-hidden="true"
-		              fill="currentColor"
-		              viewBox="0 0 20 20"
-		            >
-		              <path
-		                fill-rule="evenodd"
-		                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-		                clip-rule="evenodd"
-		              ></path>
-		            </svg>
-		          </button>
-		          <template x-if="isPagesMenuOpen">
-		            <ul
-		              x-transition:enter="transition-all ease-in-out duration-300"
-		              x-transition:enter-start="opacity-25 max-h-0"
-		              x-transition:enter-end="opacity-100 max-h-xl"
-		              x-transition:leave="transition-all ease-in-out duration-300"
-		              x-transition:leave-start="opacity-100 max-h-xl"
-		              x-transition:leave-end="opacity-0 max-h-0"
-		              class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-		              aria-label="submenu"
-		            >
-		              <a>내용.</a>
-		     
-		            </ul>
-		          </template>
-		        </li>
-				
-				
-				
-				<li class="relative px-4 py-3">
-						          <button
-						            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-						            @click="togglePagesMenu"
-						            aria-haspopup="true"
-						          >안녕하세요2.
-						            <svg
-						              class="w-4 h-4"
-						              aria-hidden="true"
-						              fill="currentColor"
-						              viewBox="0 0 20 20"
-						            >
-						              <path
-						                fill-rule="evenodd"
-						                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-						                clip-rule="evenodd"
-						              ></path>
-						            </svg>
-						          </button>
-						          <template x-if="isPagesMenuOpen">
-						            <ul
-						              x-transition:enter="transition-all ease-in-out duration-300"
-						              x-transition:enter-start="opacity-25 max-h-0"
-						              x-transition:enter-end="opacity-100 max-h-xl"
-						              x-transition:leave="transition-all ease-in-out duration-300"
-						              x-transition:leave-start="opacity-100 max-h-xl"
-						              x-transition:leave-end="opacity-0 max-h-0"
-						              class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-						              aria-label="submenu"
-						            >
-						              <a>내용.</a>
-						     
-						            </ul>
-						          </template>
-						        </li>
-								
-								
-								
-								
-								<li class="relative px-4 py-3">
-										          <button
-										            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-										            @click="togglePagesMenu"
-										            aria-haspopup="true"
-										          >안녕하세요3.
-										            <svg
-										              class="w-4 h-4"
-										              aria-hidden="true"
-										              fill="currentColor"
-										              viewBox="0 0 20 20"
-										            >
-										              <path
-										                fill-rule="evenodd"
-										                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-										                clip-rule="evenodd"
-										              ></path>
-										            </svg>
-										          </button>
-										          <template x-if="isPagesMenuOpen">
-										            <ul
-										              x-transition:enter="transition-all ease-in-out duration-300"
-										              x-transition:enter-start="opacity-25 max-h-0"
-										              x-transition:enter-end="opacity-100 max-h-xl"
-										              x-transition:leave="transition-all ease-in-out duration-300"
-										              x-transition:leave-start="opacity-100 max-h-xl"
-										              x-transition:leave-end="opacity-0 max-h-0"
-										              class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-										              aria-label="submenu"
-										            >
-										              <a>내용.</a>
-										     
-										            </ul>
-										          </template>
-										        </li>
-												
-												
-												
-				
-				
-				
-		      </ul>
-		     
-		    </div>
-		  </div>
-	</div>
-	
+	<section class="top-section">
+	   <div class="container">
+	     <div class="row">
+	    
+	       <div class="col-lg-15 align-self-center">
+	         <div class="accordions is-first-expanded">
+	           <article class="accordion">
+	             <div class="accordion-head">
+	                 <span>공지사항1</span>
+	                 <span class="icon">
+	                     <i class="icon fa fa-chevron-right"></i>
+	                 </span>
+	             </div>
+	             <div class="accordion-body">
+	                 <div class="content">
+	                     <p>공지사항 내용1</p>
+	                 </div>
+	             </div>
+	         </article>
+	         <article class="accordion">
+	           <div class="accordion-head">
+	               <span>공지사항2</span>
+	               <span class="icon">
+	                   <i class="icon fa fa-chevron-right"></i>
+	               </span>
+	           </div>
+	           <div class="accordion-body">
+	               <div class="content">
+	                   <p>공지사항 내용2</p>
+	               </div>
+	           </div>
+	         </article>
+	         <article class="accordion">
+	           <div class="accordion-head">
+	               <span>공지사항3</span>
+	               <span class="icon">
+	                   <i class="icon fa fa-chevron-right"></i>
+	               </span>
+	           </div>
+	           <div class="accordion-body">
+	               <div class="content">
+	                   <p>공지사항 내용3</p>
+	               </div>
+	           </div>
+	         </article>
+	       </div>
+	     </div>
+	   </div>
+	 </section>  
 	
 	
 	
@@ -425,6 +339,72 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+	
+	
+	<!-- Scripts -->
+	  <!-- Bootstrap core JavaScript -->
+	    <script src="vendor/jquery/jquery.min.js"></script>
+	    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	    <script src="assets/js/isotope.min.js"></script>
+	    <script src="assets/js/owl-carousel.js"></script>
+
+	    <script src="assets/js/tabs.js"></script>
+	    <script src="assets/js/swiper.js"></script>
+	    <script src="assets/js/custom.js"></script>
+	    <script>
+	        var interleaveOffset = 0.5;
+
+	      var swiperOptions = {
+	        loop: true,
+	        speed: 1000,
+	        grabCursor: true,
+	        watchSlidesProgress: true,
+	        mousewheelControl: true,
+	        keyboardControl: true,
+	        navigation: {
+	          nextEl: ".swiper-button-next",
+	          prevEl: ".swiper-button-prev"
+	        },
+	        on: {
+	          progress: function() {
+	            var swiper = this;
+	            for (var i = 0; i < swiper.slides.length; i++) {
+	              var slideProgress = swiper.slides[i].progress;
+	              var innerOffset = swiper.width * interleaveOffset;
+	              var innerTranslate = slideProgress * innerOffset;
+	              swiper.slides[i].querySelector(".slide-inner").style.transform =
+	                "translate3d(" + innerTranslate + "px, 0, 0)";
+	            }      
+	          },
+	          touchStart: function() {
+	            var swiper = this;
+	            for (var i = 0; i < swiper.slides.length; i++) {
+	              swiper.slides[i].style.transition = "";
+	            }
+	          },
+	          setTransition: function(speed) {
+	            var swiper = this;
+	            for (var i = 0; i < swiper.slides.length; i++) {
+	              swiper.slides[i].style.transition = speed + "ms";
+	              swiper.slides[i].querySelector(".slide-inner").style.transition =
+	                speed + "ms";
+	            }
+	          }
+	        }
+	      };
+
+	      var swiper = new Swiper(".swiper-container", swiperOptions);
+	    </script>
+	
+
+	
+	
+	
+	
+	
+	
+	
 </body>
 
 </html>
