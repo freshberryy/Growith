@@ -18,6 +18,6 @@ public class ContactController {
     @PostMapping("/contact")
     public String create(@ModelAttribute Contact contact) {
         contactService.craate(contact);
-        return "support_announcements";
+        return "support_notice";
     }
 }
