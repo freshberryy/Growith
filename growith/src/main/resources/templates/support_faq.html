@@ -117,36 +117,36 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">회사소개</a>
                     <div class="dropdown-menu m-0">
-                        <a href="about_overview.html" class="dropdown-item">회사개요</a>
-                        <a href="about_team.html" class="dropdown-item">팀 소개</a>
-                        <a href="about_history.html" class="dropdown-item">회사 연혁</a>
+                        <a th:href="@{/about/overview}" class="dropdown-item">회사개요</a>
+                        <a th:href="@{/about/team}" class="dropdown-item">팀 소개</a>
+                        <a th:href="@{/about/history}" class="dropdown-item">회사 연혁</a>
                     </div>
                 </div>
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">프로젝트 소개</a>
                     <div class="dropdown-menu m-0">
-                        <a href="projects_current.html" class="dropdown-item">현 프로젝트 - PADO</a>
-                        <a href="projects_projects.html" class="dropdown-item">프로젝트들</a>
-                        <a href="projects_gallery.html" class="dropdown-item">제품 갤러리</a>
+                        <a th:href="@{/project/current}" class="dropdown-item">현 프로젝트 - PADO</a>
+                        <a th:href="@{/project/projects}" class="dropdown-item">프로젝트들</a>
+                        <a th:href="@{/project/gallery}" class="dropdown-item">제품 갤러리</a>
                     </div>
                 </div>
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">고객센터</a>
                     <div class="dropdown-menu m-0">
-                        <a href="support_announcements.html" class="dropdown-item">공지사항</a>
-                        <a href="support_faq.html" class="dropdown-item">FAQ</a>
-                        <a href="support_contact.html" class="dropdown-item">문의하기</a>
+                        <a th:href="@{/support/notice}" class="dropdown-item">공지사항</a>
+                        <a th:href="@{/support/faqlist}" class="dropdown-item">FAQ</a>
+                        <a th:href="@{/support/contact}" class="dropdown-item">문의하기</a>
                     </div>
                 </div>
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">투자자 정보</a>
                     <div class="dropdown-menu m-0">
-                        <a href="/templates/investor_info_details.html" class="dropdown-item">투자 정보</a>
-                        <a href="/templates/investor_info_financial.html" class="dropdown-item">재무 정보</a>
-                        <a href="/templates/investor_info_press.html" class="dropdown-item">언론 보도</a>
+                        <a th:href="@{/investor/details}" class="dropdown-item">투자 정보</a>
+                        <a th:href="@{/investor/financial}" class="dropdown-item">재무 정보</a>
+                        <a th:href="@{/investor/press}" class="dropdown-item">언론 보도</a>
                     </div>
                 </div>
             </div>
