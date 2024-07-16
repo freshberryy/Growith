@@ -14,6 +14,6 @@ public class ContactType {
 
     private String content;
 
-    @OneToMany(mappedBy = "ContactType")
+    @OneToMany(mappedBy = "type")
     private List<Contact> contactList;
 }

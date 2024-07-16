@@ -1,4 +1,4 @@
-package com.example.growith.supportservice;
+package com.example.growith.member;
 
 import lombok.Getter;
 
