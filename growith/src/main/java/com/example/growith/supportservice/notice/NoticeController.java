@@ -30,24 +30,24 @@ public class NoticeController {
 		return "support_notice_readdetail";
 	}
 
-	@GetMapping("/support_contact")
-	public String contact() {
-		return "support_contact";
-	}
-	
-	@PostMapping("/support_contact")
-    public String submitContactForm(@RequestParam("name") String name,
-                                    @RequestParam("email") String email,
-                                    @RequestParam("content") String content,
-                                    @RequestParam("phone") String phone,
-                                    Model model) {
-		return "support_contact";
-	}
-
-	@GetMapping("/faq")
-	public String faq() {
-		return "support_faq";
-	}
+//	@GetMapping("/contact")
+//	public String contact() {
+//		return "support_contact";
+//	}
+//
+//	@PostMapping("/contact")
+//    public String submitContactForm(@RequestParam("name") String name,
+//                                    @RequestParam("email") String email,
+//                                    @RequestParam("content") String content,
+//                                    @RequestParam("phone") String phone,
+//                                    Model model) {
+//		return "support_contact";
+//	}
+//
+//	@GetMapping("/faq")
+//	public String faq() {
+//		return "support_faq";
+//	}
 	
 	
 	

@@ -16,6 +16,10 @@ public class NoticeService {
 		notice.setDate(LocalDateTime.now());
 		noticeRepository.save(notice);
 	}
+
+	public void delete(Integer id) {
+		noticeRepository.deleteById(id);
+	}
 	
 	// db에 있는 board 전체 갖고 오기
 	public List<Notice> readList(){
