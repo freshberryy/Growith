@@ -17,7 +17,7 @@ public class ContactService {
     private final JavaMailSender mailSender;
     private static final String EMAIL_TITLE_PREFIX = "[Growith] 문의사항: ";
 
-    public void craate(Contact contact) {
+    public void create(Contact contact) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo("hs381717@gmail.com");
         message.setSubject(EMAIL_TITLE_PREFIX + contact.getType());

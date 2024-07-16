@@ -1,4 +1,4 @@
-package com.example.growith.supportservice;
+package com.example.growith.member;
 
 import com.example.growith.supportservice.faq.Faq;
 import com.example.growith.supportservice.notice.Notice;
