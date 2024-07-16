@@ -30,12 +30,12 @@ public class NoticeController {
 		return "support_announcements_readdetail";
 	}
 
-	@GetMapping("/contact")
+	@GetMapping("/support_contact")
 	public String contact() {
 		return "support_contact";
 	}
 	
-	@PostMapping("/contact")
+	@PostMapping("/support_contact")
     public String submitContactForm(@RequestParam("name") String name,
                                     @RequestParam("email") String email,
                                     @RequestParam("content") String content,
