@@ -1,4 +1,4 @@
-package com.example.growith.customerservice;
+package com.example.growith.supportservice;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

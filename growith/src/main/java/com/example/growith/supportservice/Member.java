@@ -1,7 +1,7 @@
-package com.example.growith.customerservice;
+package com.example.growith.supportservice;
 
-import com.example.growith.customerservice.faq.Faq;
-import com.example.growith.customerservice.notice.Notice;
+import com.example.growith.supportservice.faq.Faq;
+import com.example.growith.supportservice.notice.Notice;
 import jakarta.persistence.*;
 import lombok.Data;
 

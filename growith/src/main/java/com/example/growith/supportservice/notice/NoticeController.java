@@ -1,4 +1,4 @@
-package com.example.growith.customerservice.notice;
+package com.example.growith.supportservice.notice;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

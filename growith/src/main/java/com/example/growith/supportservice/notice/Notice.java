@@ -1,8 +1,8 @@
-package com.example.growith.customerservice.notice;
+package com.example.growith.supportservice.notice;
 
 import java.time.LocalDateTime;
 
-import com.example.growith.customerservice.Member;
+import com.example.growith.supportservice.Member;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

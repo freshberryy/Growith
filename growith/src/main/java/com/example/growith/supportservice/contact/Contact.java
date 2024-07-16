@@ -1,6 +1,6 @@
-package com.example.growith.customerservice.inquery;
+package com.example.growith.supportservice.contact;
 
-import com.example.growith.customerservice.PhoneNumber;
+import com.example.growith.supportservice.PhoneNumber;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -10,13 +10,13 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-public class Inquery {
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
-    private InqueryType type;
+    private ContactType type;
 
     @NotEmpty(message = "이름을 입력해주세요.")
     private String name;

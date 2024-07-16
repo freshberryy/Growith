@@ -1,4 +1,4 @@
-package com.example.growith.customerservice.inquery;
+package com.example.growith.supportservice.contact;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,13 +7,13 @@ import java.util.List;
 
 @Data
 @Entity
-public class InqueryType {
+public class ContactType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String content;
 
-    @OneToMany(mappedBy = "type")
-    private List<Inquery> inqueryList;
+    @OneToMany(mappedBy = "ContactType")
+    private List<Contact> contactList;
 }
