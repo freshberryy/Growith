@@ -17,7 +17,7 @@ public class ContactController {
 
     @PostMapping("/contact")
     public String create(@ModelAttribute Contact contact) {
-        contactService.craate(contact);
+        contactService.create(contact);
         return "support_notice";
     }
 }
