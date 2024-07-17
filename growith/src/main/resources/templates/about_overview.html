@@ -368,6 +368,22 @@
 
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
+    <script>
+        // Show or hide the "Back to Top" button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $('.back-to-top').fadeIn('slow');
+            } else {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+
+        // Scroll to the top when the button is clicked
+        $('.back-to-top').click(function() {
+            $('html, body').animate({scrollTop: 0}, 600);
+            return false;
+        });
+    </script>
 </body>
 
 </html>
