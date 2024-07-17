@@ -5,10 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @PreAuthorize("hasAuthority('ROLE_ADMIN')")
 @RequestMapping("/admin/ContactType")
@@ -36,7 +33,7 @@ public class AdminContactTypeController {
         return "admin/ContactType/update";
     }
 
-    @GetMapping("/update/{id}")
+    @PostMapping("/update/{id}")
     public String update(@PathVariable("id") Integer id) {
         ContactType contactType = adminService.findById(id);
 //        model.addAttribute("contactType", contactType);
