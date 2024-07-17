@@ -483,6 +483,11 @@ h6,
     background-size: cover;
 }
 
+.bg-header-investor {
+    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(https://bucket-s9r52c.s3.ap-northeast-2.amazonaws.com/%ED%88%AC%EC%9E%90%EC%98%88%EC%8B%9C2.jpg) center center no-repeat;
+    background-size: cover;
+}
+
 .link-animated a {
     transition: .5s;
 }

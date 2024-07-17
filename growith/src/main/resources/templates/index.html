@@ -44,11 +44,7 @@
           <div class="container-fluid bg-dark px-5 d-none d-lg-block">
               <div class="row gx-0">
                   <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-                      <div class="d-inline-flex align-items-center" style="height: 45px;">
-                          <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>충청남도 천안시 서북구 두정중1길 6-9, 2층 201-2호 (두정동, 대림빌딩)</small>
-                          <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+82 010-9634-5765</small>
-                          <small class="text-light"><i class="fa fa-envelope-open me-2"></i>myeng07@naver.com</small>
-                      </div>
+   
                   </div>
               </div>
           </div>
@@ -132,7 +128,7 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">함께 성장하는 혁신적인 스타트업 기업</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn"><img src="img/growith_logo_white.png" alt="Growith Logo" class="me-2" style="height:70px;">asdasds</h1>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn"><img src="img/growith_logo_white.png" alt="Growith Logo" class="me-2" style="height:70px;"></h1>
                         </div>
                     </div>
                 </div>
@@ -180,10 +176,10 @@
     <div class="container py-5">
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
             <h5 class="fw-bold text-primary text-uppercase">About US</h5>
-            <h1 class="mb-0">저희 회사를 소개 합니다</h1>
+            <h1 class="mb-0">저희 회사를 소개합니다</h1>
         </div>
         <div class="request-quote-container text-center mb-4">
-            <button class="btn btn-primary py-2 px-4 mt-2">GROWITH 더 알아보기</button>
+            <button class="btn btn-primary py-2 px-4 mt-2" th:onclick="'location.href=\'' + @{/about/overview} + '\''">GROWITH 더 알아보기</button>
         </div>
         <div class="row g-5">
             <div class="col-lg-3">
@@ -233,7 +229,8 @@
                         <h1 class="mb-0">우리들의 프로젝트</h1>
                     </div>
                     <p class="mb-4">프로젝트에 대한 설명글을 넣어주세요.</p>
-                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3">프로젝트 더 알아보기</a>
+                    <a th:href="@{/project/current}" class="btn btn-primary py-3 px-5 mt-3">프로젝트 더 알아보기</a>
+
                 </div>
                 <div class="col-lg-5" style="min-height: 400px;">
                     <div class="position-relative h-100">
@@ -263,7 +260,8 @@
                     <h1 class="mb-0">혁신적인 제품들</h1>
                 </div>
                 <p class="mb-4">제품에 대한 설명글을 써주세요.</p>
-                <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3">제품 갤러리로 가기</a>
+                <a th:href="@{/project/projects}" class="btn btn-primary py-3 px-5 mt-3">제품 갤러리로 가기</a>
+
             </div>
         </div>
     </div>
@@ -278,64 +276,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Investor</h5>
-                <h1 class="mb-0">투자자들</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light my-4">
-                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
-                        <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;" >
-                        <div class="ps-4">
-                            <h4 class="text-primary mb-1">Client Name</h4>
-                            <small class="text-uppercase">Profession</small>
-                        </div>
-                    </div>
-                    <div class="pt-4 pb-5 px-5">
-                        Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Testimonial End -->
 
 

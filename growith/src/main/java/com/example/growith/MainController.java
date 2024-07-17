@@ -13,7 +13,7 @@ public class MainController {
 
     @GetMapping("/admin")
     public String admin() {
-        return "admin";
+        return "admin_login";
     }
 
     @PostMapping("/admin")
