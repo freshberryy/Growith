@@ -22,4 +22,16 @@ public class AdminController {
     public String login(@RequestParam String username, @RequestParam String password) {
         return "admin/login";
     }
+    
+    @GetMapping("/faq")
+    public String adminfaq() {
+        return "admin_faq_manager";
+    }
+
+    @GetMapping("/notice")
+    public String adminnotice() {
+        return "admin_notice_manager";
+    }
+
+
 }
