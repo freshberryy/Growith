@@ -16,7 +16,7 @@ public class MemberService {
     public Member authen() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        Optional<Member> author = memberRepository.findByUsername(userDetails.getUsername());
+        Optional<Member> author = memberRepository.findByEmail(userDetails.getUsername());
         return author.get();
     }
 }
