@@ -37,4 +37,16 @@ public class AdminController {
     public String login(@RequestParam("email") String email, @RequestParam("password") String password) {
         return "redirect:/admin/login";
     }
+    
+    @GetMapping("/faq")
+    public String adminfaq() {
+        return "admin_faq_manager";
+    }
+
+    @GetMapping("/notice")
+    public String adminnotice() {
+        return "admin_notice_manager";
+    }
+
+
 }

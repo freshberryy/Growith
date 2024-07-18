@@ -23,7 +23,7 @@ public class AdminNoticeController {
 
     @GetMapping("/create")
     public String noticeCreate() {
-        return "admin/notice/create";
+        return "admin_notice_create";
     }
 
     @PostMapping("/create")
