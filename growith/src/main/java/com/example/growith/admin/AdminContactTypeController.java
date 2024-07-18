@@ -1,4 +1,4 @@
-package com.example.growith.contacType;
+package com.example.growith.admin;
 
 import com.example.growith.supportservice.contact.ContactType;
 import com.example.growith.supportservice.contact.ContactTypeService;
