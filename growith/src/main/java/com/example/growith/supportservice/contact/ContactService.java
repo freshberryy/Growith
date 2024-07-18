@@ -21,7 +21,11 @@ public class ContactService {
     public void create(Contact contact) {
         contact.setDate(LocalDateTime.now());
         contactRepository.save(contact);
-        sendMailService.sendMail(contact);
+        try {
+            sendMailService.sendMail(contact);
+        } catch (Exception e) {
+            System.out.println("Send mail failed: " + e.getMessage());
+        }
     }
 
     public void delete(Integer id) {
