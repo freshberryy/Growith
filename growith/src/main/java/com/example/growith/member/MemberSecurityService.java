@@ -19,8 +19,8 @@ public class MemberSecurityService implements UserDetailsService {
     private final MemberRepository memberRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<Member> chMember = memberRepository.findByUsername(username);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Optional<Member> chMember = memberRepository.findByEmail(email);
 
         if (chMember.isEmpty()) {
             throw new UsernameNotFoundException("You need to Sign Up first.");
@@ -34,6 +34,6 @@ public class MemberSecurityService implements UserDetailsService {
             authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }
 
-        return new User(member.getUsername(), member.getPassword(), authorities);
+        return new User(member.getEmail(), member.getPassword(), authorities);
     }
 }
