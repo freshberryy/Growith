@@ -60,14 +60,15 @@
                         <img src="/img/growith_logo_black.png" alt="Growith Logo"> <!-- Logo -->
                     </a>
                     <p class="mt-3 mb-4">개발자용 로그인입니다.</p>
-                    <form action="">
+                    <form action="/admin/login" method="post">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control border-white p-3" placeholder="Your Email">
+                            <input type="email" name="email" class="form-control border-white p-3" placeholder="Your Email">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control border-white p-3" placeholder="Your Password">
+                            <input type="password" name="password" class="form-control border-white p-3" placeholder="Your Password">
                         </div>
-                        <button class="btn btn-dark">Sign Up</button>
+                        <button class="btn btn-dark">Sign In</button>
                     </form>
                 </div>
             </div>
