@@ -16,6 +16,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    private final CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
+
+    public SecurityConfig(CustomAuthenticationFailureHandler customAuthenticationFailureHandler) {
+        this.customAuthenticationFailureHandler = customAuthenticationFailureHandler;
+    }
+
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -31,6 +37,7 @@ public class SecurityConfig {
                         formLogin.loginPage("/admin/login")
                                 .defaultSuccessUrl("/")
                                 .usernameParameter("email") //로그인 폼의 username 파라미터를 email로 변경
+                                .failureHandler(customAuthenticationFailureHandler) // 로그인 실패 로그 핸들러
                                 .permitAll()
                 )
                 .logout(logout ->
