@@ -1,12 +1,13 @@
 package com.example.growith.supportservice.contact;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+
 @RequiredArgsConstructor
-@Controller
+@Service
 public class ContactTypeService {
     private final ContactTypeRepository contactTypeRepository;
 
