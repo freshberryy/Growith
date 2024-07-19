@@ -20,4 +20,9 @@ public class MainController {
 //    public String adminPost() {
 //        return "redirect:/";
 //    }
+    
+    @GetMapping("/admincontact")
+    public String admincontect() {
+        return "admin_contact";
+    }
 }
