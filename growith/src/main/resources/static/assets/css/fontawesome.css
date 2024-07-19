@@ -4834,6 +4834,10 @@ readers do not read off random characters that represent icons */
 .fa-truck-fast::before {
   content: "\f48b"; }
 
+.fa-truck-front::before {
+  content: "\e2b7"; }
+
+
 .fa-shipping-fast::before {
   content: "\f48b"; }
 
