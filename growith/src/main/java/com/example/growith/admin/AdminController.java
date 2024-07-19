@@ -47,6 +47,10 @@ public class AdminController {
     public String adminnotice() {
         return "admin_notice_manager";
     }
+    
+    
+    
+    
 
 
 }
