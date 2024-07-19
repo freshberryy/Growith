@@ -11,13 +11,18 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin_login";
-    }
-
-    @PostMapping("/admin")
-    public String adminPost() {
-        return "redirect:/";
+//    @GetMapping("/admin")
+//    public String admin() {
+//        return "admin_login";
+//    }
+//
+//    @PostMapping("/admin")
+//    public String adminPost() {
+//        return "redirect:/";
+//    }
+    
+    @GetMapping("/admincontact")
+    public String admincontect() {
+        return "admin_contact";
     }
 }

@@ -201,7 +201,7 @@
         <div class="row">
             <div class="col-lg-15 align-self-center">
                 <div class="d-flex justify-content-end mb-3">
-                    <button class="btn btn-primary btn-sm" onclick="writeNotice()">글쓰기</button>
+                    <a th:href="@{/admin/notice/create}"class="btn btn-primary btn-sm" >글쓰기</a>
                 </div>
                 <div class="accordions is-first-expanded">
                     <article class="accordion">
@@ -214,8 +214,10 @@
                         <div class="accordion-body">
                             <div class="content">
                                 <p>공지사항 내용1</p>
-                                <button class="btn btn-warning btn-sm" onclick="editNotice(1)">수정하기</button>
-                                <button class="btn btn-danger btn-sm" onclick="deleteNotice(1)">삭제</button>
+                                <a class="btn btn-warning btn-sm" onclick="editNOTICE(1)">수정하기</a>
+                     			<a class="btn btn-danger btn-sm" onclick="deleteNOTICE(1)">삭제</a>
+                                <!--  <a th:href="{|/delete/notice=ID=${notice.id}|}" class="btn btn-warning btn-sm">수정하기</a>
+                                <a th:href="{|/update/notice=ID=${notice.id}|}" class="btn btn-danger btn-sm">삭제</a> -->
                             </div>
                         </div>
                     </article>
@@ -229,8 +231,10 @@
                         <div class="accordion-body">
                             <div class="content">
                                 <p>공지사항 내용2</p>
-                                <button class="btn btn-warning btn-sm" onclick="editNotice(2)">수정하기</button>
-                                <button class="btn btn-danger btn-sm" onclick="deleteNotice(2)">삭제</button>
+                                <a class="btn btn-warning btn-sm" onclick="editNOTICE(1)">수정하기</a>
+                     			<a class="btn btn-danger btn-sm" onclick="deleteNOTICE(1)">삭제</a>
+                                <!--  <a th:href="{|/delete/notice=ID=${notice.id}|}" class="btn btn-warning btn-sm">수정하기</a>
+                                <a th:href="{|/update/notice=ID=${notice.id}|}" class="btn btn-danger btn-sm">삭제</a> -->
                             </div>
                         </div>
                     </article>
@@ -244,8 +248,10 @@
                         <div class="accordion-body">
                             <div class="content">
                                 <p>공지사항 내용3</p>
-                                <button class="btn btn-warning btn-sm" onclick="editNotice(3)">수정하기</button>
-                                <button class="btn btn-danger btn-sm" onclick="deleteNotice(3)">삭제</button>
+                                <a class="btn btn-warning btn-sm" onclick="editNOTICE(1)">수정하기</a>
+                     			<a class="btn btn-danger btn-sm" onclick="deleteNOTICE(1)">삭제</a>
+                                <!--  <a th:href="{|/delete/notice=ID=${notice.id}|}" class="btn btn-warning btn-sm">수정하기</a>
+                                <a th:href="{|/update/notice=ID=${notice.id}|}" class="btn btn-danger btn-sm">삭제</a> -->
                             </div>
                         </div>
                     </article>

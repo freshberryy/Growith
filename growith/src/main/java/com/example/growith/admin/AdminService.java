@@ -6,26 +6,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import java.util.List;
+
 
 @RequiredArgsConstructor
 @Service
 public class AdminService {
-    private final ContactTypeRepository contactTypeRepository;
 
-    public void createContactType(ContactType contactType) {
-        contactTypeRepository.save(contactType);
-    }
-
-    public void deleteContactType(ContactType contactType) {
-        contactTypeRepository.delete(contactType);
-    }
-
-    public void updateContactType(ContactType contactType) {
-        contactTypeRepository.save(contactType);
-    }
-
-    public ContactType findById(Integer id) {
-        ContactType contactType = contactTypeRepository.findById(id).get();
-        return contactType;
-    }
 }
