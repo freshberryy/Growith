@@ -1,25 +1,24 @@
 package com.example.growith.admin;
 
 import com.example.growith.supportservice.notice.Notice;
-import com.example.growith.supportservice.notice.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+@PreAuthorize("hasRole('ADMIN')")
 @RequestMapping("/admin/notice")
 @RequiredArgsConstructor
 @Controller
 public class AdminNoticeController {
-    private final NoticeService noticeService;
+    private final AdminNoticeService adminNoticeService;
 
-    @GetMapping("/readList")
-    public String readList(Model model) {
-        model.addAttribute("notices", noticeService.readList());
-        return "admin/notice/list";
-    }
+//    @GetMapping("/manage")
+//    public String readList(Model model) {
+//        model.addAttribute("notices", adminNoticeService.getAllNotices());
+//        return "admin_notice_manager";
+//    }
 
     @GetMapping("/create")
     public String noticeCreate() {
@@ -28,26 +27,26 @@ public class AdminNoticeController {
 
     @PostMapping("/create")
     public String noticeCreate(@ModelAttribute Notice notice) {
-        noticeService.create(notice);
-        return "redirect:/admin/notice";
+        adminNoticeService.createNotice(notice);
+        return "redirect:/admin/notice/manage";
     }
 
     @GetMapping("/delete/noticeID={id}")
     public String noticeDelete(@PathVariable("id") Integer id) {
-        noticeService.delete(id);
-        return "redirect:/admin/notice";
+        adminNoticeService.deleteNotice(id);
+        return "redirect:/admin/notice/manage";
     }
 
     @GetMapping("/update/noticeID={id}")
     public String noticeUpdate(@PathVariable("id") Integer id, Model model) {
-        Notice notice = noticeService.readdetail(id);
+        Notice notice = adminNoticeService.getNotice(id);
         model.addAttribute("notice", notice);
-        return "admin/notice/update";
+        return "admin_notice_create";
     }
 
     @PostMapping("/update/noticeID={id}")
     public String noticeUpdate(@ModelAttribute Notice notice, @PathVariable("id") Integer id) {
-        noticeService.create(notice);
-        return "redirect:/admin/notice/detail/noticeID=" + id;
+        adminNoticeService.updateNotice(notice);
+        return "redirect:/admin/notice/manage";
     }
 }
