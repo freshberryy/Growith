@@ -27,7 +27,7 @@ public class S3Service {
         //현재 서버에 임시 저장
         File file = new File(multipartFile.getOriginalFilename());
 
-        try(FileOutputStream fos = new FileOutputStream(file)) {
+        try (FileOutputStream fos = new FileOutputStream(file)) {
             fos.write(multipartFile.getBytes());
         }
 
