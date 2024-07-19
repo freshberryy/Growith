@@ -18,8 +18,35 @@ public class AdminController {
         return "admin_login";
     }
 
+//    @GetMapping("/")
+//    public String admin() {
+//        return "admin";
+//    }
+
+//    @PostMapping("/admin")
+//    public String adminPost() {
+//        return "redirect:/";
+//    }
+
+//    @GetMapping("/login")
+//    public String login() {
+//        return "admin/login";
+//    }
+
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password) {
-        return "admin/login";
+    public String login(@RequestParam("email") String email, @RequestParam("password") String password) {
+        return "redirect:/admin/login";
     }
+    
+    @GetMapping("/faq")
+    public String adminfaq() {
+        return "admin_faq_manager";
+    }
+
+    @GetMapping("/notice")
+    public String adminnotice() {
+        return "admin_notice_manager";
+    }
+
+
 }

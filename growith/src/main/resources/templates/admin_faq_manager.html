@@ -194,7 +194,7 @@
 <section class="top-section position-relative">
    <div class="container">
      <div class="d-flex justify-content-end mb-3">
-         <button class="btn btn-primary btn-sm" onclick="writeFAQ()">글쓰기</button>
+            <a th:href="@{/admin/faq/create}" class="btn btn-primary btn-sm">글쓰기</a>
      </div>
      <div class="row">
        <div class="col-lg-15 align-self-center">
@@ -209,8 +209,10 @@
              <div class="accordion-body">
                  <div class="content">
                      <p>FAQ 내용1</p>
-                     <button class="btn btn-warning btn-sm" onclick="editFAQ(1)">수정하기</button>
-                     <button class="btn btn-danger btn-sm" onclick="deleteFAQ(1)">삭제</button>
+                     <a class="btn btn-warning btn-sm" onclick="editFAQ(1)">수정하기</a>
+                     <a class="btn btn-danger btn-sm" onclick="deleteFAQ(1)">삭제</a>
+                     <!--  <a th:href="{|/delete/faq=ID=${notice.id}|}" class="btn btn-warning btn-sm">수정하기</a>
+                     <a th:href="{|/update/faq=ID=${notice.id}|}" class="btn btn-danger btn-sm">삭제</a> -->
                  </div>
              </div>
            </article>
@@ -224,8 +226,10 @@
              <div class="accordion-body">
                  <div class="content">
                      <p>FAQ 내용2</p>
-                     <button class="btn btn-warning btn-sm" onclick="editFAQ(2)">수정하기</button>
-                     <button class="btn btn-danger btn-sm" onclick="deleteFAQ(2)">삭제</button>
+                     <a class="btn btn-warning btn-sm" onclick="editFAQ(1)">수정하기</a>
+                     <a class="btn btn-danger btn-sm" onclick="deleteFAQ(1)">삭제</a>
+                     <!--  <a th:href="{|/delete/faq=ID=${notice.id}|}" class="btn btn-warning btn-sm">수정하기</a>
+                     <a th:href="{|/update/faq=ID=${notice.id}|}" class="btn btn-danger btn-sm">삭제</a> -->
                  </div>
              </div>
            </article>
@@ -239,8 +243,10 @@
              <div class="accordion-body">
                  <div class="content">
                      <p>FAQ 내용3</p>
-                     <button class="btn btn-warning btn-sm" onclick="editFAQ(3)">수정하기</button>
-                     <button class="btn btn-danger btn-sm" onclick="deleteFAQ(3)">삭제</button>
+                     <a class="btn btn-warning btn-sm" onclick="editFAQ(1)">수정하기</a>
+                     <a class="btn btn-danger btn-sm" onclick="deleteFAQ(1)">삭제</a>
+                     <!--  <a th:href="{|/delete/faq=ID=${notice.id}|}" class="btn btn-warning btn-sm">수정하기</a>
+                     <a th:href="{|/update/faq=ID=${notice.id}|}" class="btn btn-danger btn-sm">삭제</a> -->
                  </div>
              </div>
            </article>

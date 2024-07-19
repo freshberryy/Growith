@@ -16,11 +16,10 @@ public class Member {
 	private Integer id;
 	
 	@Column(unique = true)
-	private String username;
+	private String email;
+//	private String username;
 	
 	private String password;
-	
-	private String email;
 	
 	private String role;
 

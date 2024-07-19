@@ -15,9 +15,15 @@ import org.springframework.web.bind.annotation.*;
 public class AdminNoticeController {
     private final NoticeService noticeService;
 
+    @GetMapping("/readList")
+    public String readList(Model model) {
+        model.addAttribute("notices", noticeService.readList());
+        return "admin/notice/list";
+    }
+
     @GetMapping("/create")
     public String noticeCreate() {
-        return "admin/notice/create";
+        return "admin_notice_create";
     }
 
     @PostMapping("/create")
