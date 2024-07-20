@@ -1,5 +1,6 @@
 package com.example.growith.admin;
 
+import com.example.growith.HtmlSanitizerService;
 import com.example.growith.supportservice.notice.Notice;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,28 +14,24 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class AdminNoticeController {
     private final AdminNoticeService adminNoticeService;
-
-//    @GetMapping("/manage")
-//    public String readList(Model model) {
-//        model.addAttribute("notices", adminNoticeService.getAllNotices());
-//        return "admin_notice_manager";
-//    }
+    private final HtmlSanitizerService htmlSanitizerService;
 
     @GetMapping("/create")
-    public String noticeCreate() {
+    public String noticeCreate(Model model) {
+        model.addAttribute("notice", new Notice());
         return "admin_notice_create";
     }
 
     @PostMapping("/create")
     public String noticeCreate(@ModelAttribute Notice notice) {
         adminNoticeService.createNotice(notice);
-        return "redirect:/admin/notice/manage";
+        return "redirect:/admin/notice";
     }
 
     @GetMapping("/delete/noticeID={id}")
     public String noticeDelete(@PathVariable("id") Integer id) {
         adminNoticeService.deleteNotice(id);
-        return "redirect:/admin/notice/manage";
+        return "redirect:/admin/notice";
     }
 
     @GetMapping("/update/noticeID={id}")
@@ -44,9 +41,11 @@ public class AdminNoticeController {
         return "admin_notice_create";
     }
 
-    @PostMapping("/update/noticeID={id}")
-    public String noticeUpdate(@ModelAttribute Notice notice, @PathVariable("id") Integer id) {
+    @PostMapping("/update")
+    public String noticeUpdate(@ModelAttribute Notice notice) {
+        String sanitizedContent = htmlSanitizerService.sanitizeHtml(notice.getContent());
+        notice.setContent(sanitizedContent);
         adminNoticeService.updateNotice(notice);
-        return "redirect:/admin/notice/manage";
+        return "redirect:/admin/notice";
     }
 }

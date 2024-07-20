@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Controller
 public class AdminController {
-    private final MemberService memberService;
     private final NoticeService noticeService;
 
     @GetMapping("/login")
@@ -22,20 +21,22 @@ public class AdminController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/faq")
-    public String adminfaq() {
+    public String adminFaq() {
         return "admin_faq_manager";
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/notice")
-    public String adminnotice(Model model) {
-        model.addAttribute(noticeService.readList());
+    public String adminNotice(Model model) {
+        model.addAttribute("notices", noticeService.readList());
         return "admin_notice_manager";
     }
-    
-    
-    
-    
 
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/contactType")
+    public String adminContactType(Model model) {
+        model.addAttribute(noticeService.readList());
+        return "admin_contact_manager";
+    }
 
 }
