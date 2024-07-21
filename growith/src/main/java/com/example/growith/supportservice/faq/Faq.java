@@ -2,6 +2,7 @@ package com.example.growith.supportservice.faq;
 
 import java.time.LocalDateTime;
 
+
 import com.example.growith.member.Member;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

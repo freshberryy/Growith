@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Growith - support_contact</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="Free HTML Templates" name="keywords" />
-    <meta content="Free HTML Templates" name="description" />
+
+<head>
+    <meta charset="utf-8">
+    <title>Growith_admin_notice</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon" />
@@ -261,40 +262,38 @@
         <div class="container py-1">
           <div class="row g-1 justify-content-center">
             <div class="col-lg-6">
-              <h5 class="text-center mb-4">공지사항 작성</h5>
-              <form th:action="@{|/admin/notice/${notice.title == null ? 'create' : 'update'}|}", method="post">
-                <input
-                    type="hidden"
-                    name="${_csrf.parameterName}"
-                    value="${_csrf.token}"
-                />
-                <input type="hidden" name="id" th:value="${notice.id != null ? notice.id : null}" />
-                <div class="row g-2">
-                  <div class="col-12">
-                    <input
-                        type="text"
-                        class="form-control border-0 bg-light px-4"
-                        placeholder="제목을 입력하세요."
-                        th:value="${notice.title != null ? notice.title : null}"
-                        name="title"
-                        style="height: 55px"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <textarea
-                        id="summernote"
-                        placeholder="내용을 입력하세요."
-                        th:text="${notice.content != null ? notice.content : null}"
-                        name="content"
-                    ></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-primary w-100 py-3" type="submit">
-                      등록
-                    </button>
-                  </div>
-                </div>
-              </form>
+            <h5 class="text-center mb-4">공지사항 작성</h5>
+                <form action="/admin/notice/create" method="post">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <input type="text" class="form-control border-0 bg-light px-4" placeholder="Title" style="height: 55px;">
+                        </div>
+                        <div class="col-12">
+                        	<textarea id="summernote" name="contents"></textarea>
+                        	<!-- Summer note --> 
+							<script>
+						      $('#summernote').summernote({
+						    	  placeholder: '공지사항 내용을 입력하세요...',
+						        tabsize: 2,
+						        height: 120,
+						        toolbar: [
+						          ['style', ['style']],
+						          ['font', ['bold', 'underline', 'clear']],
+						          ['color', ['color']],
+						          ['para', ['ul', 'ol', 'paragraph']],
+						          ['table', ['table']],
+						          ['insert', ['link', 'picture', 'video']],
+						          ['view', ['fullscreen', 'codeview', 'help']]
+						        ]
+						      });
+						    </script>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">등록</button>
+                        </div>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
