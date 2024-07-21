@@ -2,6 +2,7 @@ package com.example.growith.admin;
 
 import com.example.growith.HtmlSanitizerService;
 import com.example.growith.supportservice.notice.Notice;
+import com.example.growith.supportservice.notice.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class AdminNoticeController {
     private final NoticeService noticeService;
+    private final HtmlSanitizerService htmlSanitizerService;
+    private final AdminNoticeService adminNoticeService;
 
     @GetMapping("/manager")
     public String readList(Model model) {
