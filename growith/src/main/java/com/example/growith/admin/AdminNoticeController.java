@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class AdminNoticeController {
     private final NoticeService noticeService;
+    //html 정리하여 악성 태그 혹은 스크립트 제거
     private final HtmlSanitizerService htmlSanitizerService;
     private final AdminNoticeService adminNoticeService;
 

@@ -10,13 +10,14 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
+//현재 미사용
 @Slf4j
 @Component
 public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
                                         AuthenticationException exception) throws IOException, ServletException {
-        log.error("Login Failed: {}", exception.getMessage());
+        log.error("로그인 실패: {}", exception.getMessage());
         super.onAuthenticationFailure(request, response, exception);
     }
 }
