@@ -17,11 +17,11 @@ public class AdminController {
 
 
 
-
-    @GetMapping("/faq")
-    public String adminFaq() {
-        return "admin_faq_manager";
-    }
+//
+//    @GetMapping("/faq")
+//    public String adminFaq() {
+//        return "admin_faq_manager";
+//    }
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/notice")
