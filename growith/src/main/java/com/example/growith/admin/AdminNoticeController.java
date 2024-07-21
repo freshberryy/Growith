@@ -13,8 +13,13 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Controller
 public class AdminNoticeController {
-    private final AdminNoticeService adminNoticeService;
-    private final HtmlSanitizerService htmlSanitizerService;
+    private final NoticeService noticeService;
+
+    @GetMapping("/manager")
+    public String readList(Model model) {
+        model.addAttribute("notices", noticeService.readList());
+        return "admin_notice_manager";
+    }
 
     @GetMapping("/create")
     public String noticeCreate(Model model) {
@@ -24,8 +29,8 @@ public class AdminNoticeController {
 
     @PostMapping("/create")
     public String noticeCreate(@ModelAttribute Notice notice) {
-        adminNoticeService.createNotice(notice);
-        return "redirect:/admin/notice";
+        noticeService.create(notice);
+        return "redirect:/admin/notice/manager";
     }
 
     @GetMapping("/delete/noticeID={id}")

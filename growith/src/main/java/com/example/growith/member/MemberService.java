@@ -1,68 +1,50 @@
 package com.example.growith.member;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.security.core.Authentication;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @Service
-public class MemberService {
-    private final MemberRepository memberRepository;
-    @Lazy
-    private final PasswordEncoder passwordEncoder;
+public class MemberService implements UserDetailsService {
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        Member member = memberRepository.findByEmail(username).orElse(null);
-//        if (member != null) {
-//            List<GrantedAuthority> authorities = new ArrayList<>();
-//            if ("ROLE_ADMIN".equals(member.getRole())) {
-//                authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-//            }
-//            return new User(member.getEmail(), member.getPassword(), authorities);
-//        } else {
-//            throw new UsernameNotFoundException("유저를 찾을 수 없습니다: " + username);
-//        }
-//
-//    }
+    @Autowired
+    MemberRepository memberRepository;
 
-//    public void create(Member member) {
-//        member.setRole("ROLE_USER");
-////        member.setDate(LocalDateTime.now());
-//        member.setPassword(passwordEncoder.encode(member.getPassword()));
-//        memberRepository.save(member);
-//    }
+    @Override
+    //유저가 로그인하면 스프링 시큐리티는 UserDetailService를 호출하고 loadUserByUsername를 호출하여 로그인 정보와 DB의 정보 비교
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Optional<Member> tempmembers = memberRepository.findByEmail(email);
+        if(tempmembers.isEmpty()){
+            throw new UsernameNotFoundException("You need to signup first");
 
-    public void create(String username, String password) {
-        Member member = new Member();
-        member.setEmail(username);
-        member.setPassword(passwordEncoder.encode(member.getPassword()));
+        }
+        Member member  = tempmembers.get();
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        if("ROLE_ADMIN".equals(member.getRole())){
+            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        }
+        return new User(member.getEmail(), member.getPassword(), authorities);
+    }
+
+    public void create(Member member) {
+        member.setEmail(member.getEmail());
         member.setRole("ROLE_ADMIN");
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        member.setPassword(encoder.encode(member.getPassword()));
         memberRepository.save(member);
     }
-
-//    public Member findByEmail(String email) {
-//        Member member = memberRepository.findByEmail(email).orElse(null);
-//        return member;
-//    }
-
-    public Member authen() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        Optional<Member> author = memberRepository.findByEmail(userDetails.getUsername());
-        return author.get();
-    }
 }
+
+
