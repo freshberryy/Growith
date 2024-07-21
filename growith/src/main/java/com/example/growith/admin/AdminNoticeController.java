@@ -1,14 +1,14 @@
 package com.example.growith.admin;
 
+import com.example.growith.HtmlSanitizerService;
 import com.example.growith.supportservice.notice.Notice;
-import com.example.growith.supportservice.notice.NoticeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+@PreAuthorize("hasRole('ADMIN')")
 @RequestMapping("/admin/notice")
 @RequiredArgsConstructor
 @Controller
@@ -22,7 +22,8 @@ public class AdminNoticeController {
     }
 
     @GetMapping("/create")
-    public String noticeCreate() {
+    public String noticeCreate(Model model) {
+        model.addAttribute("notice", new Notice());
         return "admin_notice_create";
     }
 
@@ -34,20 +35,22 @@ public class AdminNoticeController {
 
     @GetMapping("/delete/noticeID={id}")
     public String noticeDelete(@PathVariable("id") Integer id) {
-        noticeService.delete(id);
+        adminNoticeService.deleteNotice(id);
         return "redirect:/admin/notice";
     }
 
     @GetMapping("/update/noticeID={id}")
     public String noticeUpdate(@PathVariable("id") Integer id, Model model) {
-        Notice notice = noticeService.readdetail(id);
+        Notice notice = adminNoticeService.getNotice(id);
         model.addAttribute("notice", notice);
-        return "admin/notice/update";
+        return "admin_notice_create";
     }
 
-    @PostMapping("/update/noticeID={id}")
-    public String noticeUpdate(@ModelAttribute Notice notice, @PathVariable("id") Integer id) {
-        noticeService.create(notice);
-        return "redirect:/admin/notice/detail/noticeID=" + id;
+    @PostMapping("/update")
+    public String noticeUpdate(@ModelAttribute Notice notice) {
+        String sanitizedContent = htmlSanitizerService.sanitizeHtml(notice.getContent());
+        notice.setContent(sanitizedContent);
+        adminNoticeService.updateNotice(notice);
+        return "redirect:/admin/notice";
     }
 }

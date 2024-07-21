@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,23 +31,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <!-- 지하철 이미지 삽입을 위한 스타일값 -->
-    <style>
-    i img {
-    width: 16px; /* 원하는 크기로 조절 */
-    height: auto;
-    }
-    <!-- 네비게이션바 배경색 스타일값-->
-         .custom-bg {
-         background-color: rgba(0, 0, 0, 0.9);
-     }
-
-    </style>
-
-
-
 </head>
+
 <body>
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -55,23 +42,28 @@
 
 
    <!-- 탑 바 시작 -->
+          <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+              <div class="row gx-0">
+                  <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+   
+                  </div>
+              </div>
+          </div>
+          <!-- 탑 바 끝 -->
 
-    
-    <!-- 탑 바 끝 -->
 
-
-    <!-- 네비게이션 바 시작 -->
+    <!-- 네비게이션 바 시작 --> 
 <div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg custom-bg py-3 py-lg-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
         <a href="/" class="navbar-brand p-0">
             <img src="img/growith_logo_whitewhale.png" alt="Growith Whale Logo" class="whale-logo" style="height:45px;"> <!-- 고래 로고 -->
             <img src="img/growith_logo_white.png" alt="Growith Logo" class="main-logo" style="height:30px;"> <!-- 일반 로고 -->
         </a>
-
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="fa fa-bars"></span>
         </button>
-
+        
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
                 <div class="nav-item dropdown">
@@ -82,7 +74,7 @@
                         <a th:href="@{/about/history}" class="dropdown-item">회사 연혁</a>
                     </div>
                 </div>
-
+                
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">프로젝트 소개</a>
                     <div class="dropdown-menu m-0">
@@ -91,7 +83,7 @@
                         <a th:href="@{/project/gallery}" class="dropdown-item">제품 갤러리</a>
                     </div>
                 </div>
-
+                
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">고객센터</a>
                     <div class="dropdown-menu m-0">
@@ -100,7 +92,7 @@
                         <a th:href="@{/support/contact}" class="dropdown-item">문의하기</a>
                     </div>
                 </div>
-
+                
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">투자자 정보</a>
                     <div class="dropdown-menu m-0">
@@ -156,29 +148,29 @@
     </div>
     
 
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+            <div class="modal-header border-0">
+                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <div class="input-group" style="max-width: 600px;">
+                    <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                    <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Full Screen Search End -->
+</div>
+<!-- Full Screen Search End -->
 
 
-    
 
 
-    
+
+
 
 <!-- About Company Start -->
 <div class="container-fluid py-5">
@@ -229,26 +221,26 @@
 
 
 <!-- Project Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">About Project</h5>
-                        <h1 class="mb-0">우리들의 프로젝트</h1>
-                    </div>
-                    <p class="mb-4">프로젝트에 대한 설명글을 넣어주세요.</p>
-                    <a th:href="@{/project/current}" class="btn btn-primary py-3 px-5 mt-3">프로젝트 더 알아보기</a>
-
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">About Project</h5>
+                    <h1 class="mb-0">우리들의 프로젝트</h1>
                 </div>
-                <div class="col-lg-5" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
-                    </div>
+                <p class="mb-4">프로젝트에 대한 설명글을 넣어주세요.</p>
+                <a th:href="@{/project/current}" class="btn btn-primary py-3 px-5 mt-3">프로젝트 더 알아보기</a>
+
+            </div>
+            <div class="col-lg-5" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
                 </div>
             </div>
         </div>
     </div>
+</div>
 <!-- Project End -->
 
 
@@ -263,7 +255,7 @@
                     <img class="position-absolute w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
                 </div>
             </div>
-            <div class="col-lg-7"> 
+            <div class="col-lg-7">
                 <div class="section-title position-relative pb-3 mb-5">
                     <h5 class="fw-bold text-primary text-uppercase">About Product</h5>
                     <h1 class="mb-0">혁신적인 제품들</h1>
@@ -278,82 +270,18 @@
 <!-- Product End -->
 
 
- 
 
 
 
 
 
-    <!-- Testimonial Start -->
+
+<!-- Testimonial Start -->
 
     <!-- Testimonial End -->
 
 
-    <!-- 지도 시작 -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h2 class="fw-bold text-primary text-uppercase">오시는 길</h2>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="col-pb-3 mb-5 mx-auto" style="max-width: 80%;">
-        <iframe class="position-relative  pb-3 mb-4 rounded w-100 h-100 "
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1596.659325110283!2d127.13742274795517!3d36.83484387516335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b288924a13daf%3A0x4a4f08cd9cc8ae2f!2z7Lap7LKt64Ko64-EIOyynOyViOyLnCDshJzrtoHqtawg65GQ7KCV7KSRMeq4uCA2LTkgMuy4tSAyMDEtMu2YuA!5e0!3m2!1sko!2skr!4v1721262470270!5m2!1sko!2skr"
-                frameborder="0" style="min-height: 500px; border:0;" aria-hidden="false"
-                tabindex="0"></iframe>
-    </div>
-
-
-    <div class="col-lg-4 ms-6" style="width: 900px;">
-        <div class="d-flex align-items-center ms-5">
-            <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 40px; height: 40px;">
-                <i class="fa fa-map-marker-alt text-white"></i>
-            </div>
-            <div class="pb-4 ms-3">
-               <br> <h6 class="text-primary mb-0">충청남도 천안시 서북구 두정중1길 6-9, 2층 201-2호 (두정동, 대림빌딩)</h6>
-            </div>
-
-
-            <div class="bg-primary d-flex align-items-center justify-content-center rounded ms-5"  style="width: 40px; height: 40px;">
-                <i class="fa fa-phone-alt text-white"></i>
-            </div>
-            <div class="ms-3">
-                <h6 class="text-primary mb-0">+82 010-2429-8020</h6>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 ms-6" style="width: 1000px;">
-        <div class="d-flex align-items-center ms-5">
-            <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 40px; height: 40px;">
-
-                <i class="fa fa-bus-alt text-white"></i>
-
-            </div>
-            <div class="pb-4 ms-3">
-                <br> <h6 class="text-primary mb-0">두정대림아파트 하차 도보로 3분, 두정역푸르지오 남문 하차 도보로 3분</h6>
-            </div>
-
-
-            <div class="bg-primary d-flex align-items-center justify-content-center rounded ms-8"  style="width: 40px; height: 40px;">
-                 <i><img src="https://bucket-s9r52c.s3.ap-northeast-2.amazonaws.com/%EC%A7%80%ED%95%98%EC%B2%A0.png.png"></i>
-            </div>
-            <div class="ms-3">
-                <h6 class="text-primary mb-0">두정역 1번 출구 도보로 17분</h6>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-    <!-- 지도 끝 -->
+    
 
 
 
@@ -425,4 +353,5 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
