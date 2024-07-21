@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
+//현재 미사용
 @Service
 public class S3Service {
 
@@ -27,7 +28,7 @@ public class S3Service {
         //현재 서버에 임시 저장
         File file = new File(multipartFile.getOriginalFilename());
 
-        try(FileOutputStream fos = new FileOutputStream(file)) {
+        try (FileOutputStream fos = new FileOutputStream(file)) {
             fos.write(multipartFile.getBytes());
         }
 

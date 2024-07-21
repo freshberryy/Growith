@@ -17,7 +17,6 @@ public class Member {
 	
 	@Column(unique = true)
 	private String email;
-//	private String username;
 	
 	private String password;
 	
