@@ -27,8 +27,8 @@ public class NoticeService {
 	}
 	
 	public Notice readdetail(Integer id) {
-		Optional<Notice> o=noticeRepository.findById(id);
+		Notice notice = noticeRepository.findById(id).orElse(null);
 		
-		return o.get(); 
+		return notice;
 	}
 }
