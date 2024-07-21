@@ -23,7 +23,7 @@ public class MemberService implements UserDetailsService {
     MemberRepository memberRepository;
 
     @Override
-    //유저가 로그인하면 스프링 시큐리티는 UserDetailService를 호출하고 loadUserByUsername를 호출하여 로그인 정보와 DB의 정보 비교
+    //유저가 로그인하면 스프링 시큐리티는 UserDetailService를 호출하고 loadUserByUsername을 호출하여 로그인 정보와 DB의 정보 비교
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Member> tempmembers = memberRepository.findByEmail(email);
         if(tempmembers.isEmpty()){

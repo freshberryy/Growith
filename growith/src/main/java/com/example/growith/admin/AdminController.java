@@ -30,4 +30,9 @@ public class AdminController {
         return "admin_notice_manager";
     }
 
+    @GetMapping("/contact")
+    public String adminContact() {
+        return "admin_contact";
+    }
+
 }
