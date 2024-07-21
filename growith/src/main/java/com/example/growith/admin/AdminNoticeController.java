@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
 public class AdminNoticeController {
     private final NoticeService noticeService;
 
-    @GetMapping("/readList")
+    @GetMapping("/manager")
     public String readList(Model model) {
         model.addAttribute("notices", noticeService.readList());
-        return "admin/notice/list";
+        return "admin_notice_manager";
     }
 
     @GetMapping("/create")
@@ -29,7 +29,7 @@ public class AdminNoticeController {
     @PostMapping("/create")
     public String noticeCreate(@ModelAttribute Notice notice) {
         noticeService.create(notice);
-        return "redirect:/admin/notice";
+        return "redirect:/admin/notice/manager";
     }
 
     @GetMapping("/delete/noticeID={id}")

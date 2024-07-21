@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Growith - support_contact</title>
+    <title>Growith_admin_notice</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -78,7 +78,8 @@
         <div class="row g-5 justify-content-center">
             <div class="col-lg-6">
             <h5 class="text-center mb-4">공지사항 작성</h5>
-                <form>
+                <form action="/admin/notice/create" method="post">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                     <div class="row g-3">
                         <div class="col-12">
                             <input type="text" class="form-control border-0 bg-light px-4" placeholder="Title" style="height: 55px;">
