@@ -20,6 +20,7 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests //http 요청에 대한 권한 설정하는 메서드
+                        .requestMatchers("/admin/login").permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN"))
                 .formLogin((formLogin) -> formLogin.loginPage("/admin/login")
                         .defaultSuccessUrl("/admin/notice/manager", true)
