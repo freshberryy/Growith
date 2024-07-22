@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+//현재 미사용
 @PreAuthorize("hasAuthority('ROLE_ADMIN')")
 @RequestMapping("/admin/ContactType")
 @RequiredArgsConstructor
@@ -43,7 +44,6 @@ public class AdminContactTypeController {
     @PostMapping("/update/{id}")
     public String update(@PathVariable("id") Integer id) {
         ContactType contactType = contactTypeService.findById(id);
-//        model.addAttribute("contactType", contactType);
         contactTypeService.updateContactType(contactType);
         return "admin/contactType/update";
     }

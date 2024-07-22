@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
+//현재 미사용
 @Service
 public class S3Service {
 

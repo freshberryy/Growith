@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-    <div th:fragment="header">
-        <!-- 탑 바 시작 -->
-          <div class="container-fluid bg-dark px-5 d-none d-lg-block">
-              <div class="row gx-0">
-                  <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
-   
-                  </div>
-              </div>
-          </div>
-          <!-- 탑 바 끝 -->
+   <th:block th:fragment="header">
+<!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- 탑 바 시작 -->
+
+    <!-- 탑 바 끝 -->
+
+
 
 
     <!-- 네비게이션 바 시작 --> 
 <div class="container-fluid position-relative p-0">
+
     <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
         <a href="/" class="navbar-brand p-0">
-            <img src="img/growith_logo_whitewhale.png" alt="Growith Whale Logo" class="whale-logo" style="height:45px;"> <!-- 고래 로고 -->
-            <img src="img/growith_logo_white.png" alt="Growith Logo" class="main-logo" style="height:30px;"> <!-- 일반 로고 -->
+            <img src="/img/growith_logo_whitewhale.png" alt="Growith Whale Logo" class="whale-logo" style="height:45px;"> <!-- 고래 로고 -->
+            <img src="/img/growith_logo_white.png" alt="Growith Logo" class="main-logo" style="height:30px;"> <!-- 일반 로고 -->
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -65,7 +69,9 @@
             </div>
         </div>
     </nav>
-</div>
-<!-- 네비게이션바 마지막 -->
-    </div>
+
+        </div>
+    <!-- Navbar End -->
+   </th:block>
+   
 </html>

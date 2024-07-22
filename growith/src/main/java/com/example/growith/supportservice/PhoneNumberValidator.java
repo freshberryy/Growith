@@ -5,6 +5,7 @@ import jakarta.validation.ConstraintValidatorContext;
 
 import java.util.regex.Pattern;
 
+//현재 미사용
 public class PhoneNumberValidator implements ConstraintValidator<PhoneNumber, String> {
     private String regexp;
 

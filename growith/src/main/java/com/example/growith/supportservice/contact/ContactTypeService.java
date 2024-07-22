@@ -1,5 +1,15 @@
 package com.example.growith.supportservice.contact;
 
+
+import org.springframework.stereotype.Controller;
+
+import com.example.growith.member.Member;
+import com.example.growith.member.MemberRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+
+import java.util.Optional;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -7,7 +17,7 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@Service
+@Controller
 public class ContactTypeService {
     private final ContactTypeRepository contactTypeRepository;
 
@@ -28,5 +38,8 @@ public class ContactTypeService {
         return contactType;
     }
 
-    public List<ContactType> getAllContactType() { return contactTypeRepository.findAll(); }
+    public List<ContactType> getAllContactType() {
+        return contactTypeRepository.findAll();
+    }
 }
+
