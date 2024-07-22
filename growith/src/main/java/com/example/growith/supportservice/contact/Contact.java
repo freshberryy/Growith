@@ -17,7 +17,7 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private ContactType type;
 
     @NotEmpty(message = "이름을 입력해주세요.")
