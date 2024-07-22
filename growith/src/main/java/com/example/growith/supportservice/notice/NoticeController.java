@@ -18,17 +18,15 @@ public class NoticeController {
 	
 	@GetMapping("/notice")
 	public String notice(Model model) {
-		
 		model.addAttribute("notices", noticeService.readList());
-		
 		return "support_notice";
 	}
 	
-	@GetMapping("/notice/readdetail/{id}")
-	public String readdetail(Model model, @PathVariable("id") Integer id) {
-		model.addAttribute("notices", noticeService.readdetail(id));
-		return "support_notice_readdetail";
-	}
+//	@GetMapping("/notice/readdetail/{id}")
+//	public String readdetail(Model model, @PathVariable("id") Integer id) {
+//		model.addAttribute("notices", noticeService.readdetail(id));
+//		return "support_notice_readdetail";
+//	}
 
 //	@GetMapping("/contact")
 //	public String contact() {
