@@ -21,7 +21,7 @@ public class ContactController {
 
     @GetMapping("/contact")
     public String create(Model model) {
-        List<ContactType> contactTypeList = contactTypeService.getAllContactType();
+        List<ContactType> contactTypeList = contactTypeService.getAllContactTypes();
         model.addAttribute("contactTypeList", contactTypeList);
         model.addAttribute("contact", new Contact());
         return "support_contact";
