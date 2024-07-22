@@ -504,43 +504,39 @@ h6,
 }
 
 
-/*** timeline ***/
-    .timeline {
-        position: relative;
-        padding: 20px 0;
-    }
-    .timeline::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 25%; /* Adjusted to move the main timeline line to the left */
-        width: 4px;
-        background: #e9ecef;
-    }
-    .timeline-item {
-        position: relative;
-        margin: 20px 0;
-        padding-left: 25%; /* Adjusted to match the position of the main timeline line */
-        clear: both;
-    }
-    .timeline-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -40px; /* Adjusted to move the line closer to the main timeline line */
-        width: 4px;
-        height: 100px; /* Adjust this value to extend the line length */
-        background: #007bff;
-    }
-    .timeline-date {
-        position: absolute;
-        top: 0;
-        left: -60px; /* Adjusted to align the date with the moved line */
-        width: 100px;
-        text-align: right;
-    }
-    .timeline-content {
-        margin-left: 20px;
-        width: 70%;
-    }
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    width: 150px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: white; /* 날짜 글씨 색상 변경 */
+}
+
+.timeline-date-content {
+    display: inline-block;
+    padding: 10px;
+    background-color: #06A3DA;
+    color: white;
+    border-radius: 4px;
+}
+
+.timeline-content {
+    margin-left: 180px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}

@@ -1,15 +1,13 @@
 <!doctype html>
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Growith - support_faq</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="keywords" content="Growith, announcements, support" />
-    <meta name="description" content="Growith support announcements page" />
+    <title>Growith - support_contact</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
     <link href="img/favicon.ico" rel="icon" />
 
     <!-- Google Web Fonts -->
@@ -41,6 +39,18 @@
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet" />
 
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- include summernote css/js -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css"
+      rel="stylesheet"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -63,15 +73,20 @@
       defer
     ></script>
 
-    <!-- css 2번쨰 -->
+    <!-- css 2번쨰 템플릿-->
+    <!-- Bootstrap core CSS -->
+
+    <!-- Additional CSS Files -->
+
     <link rel="stylesheet" href="/assets/css/animate.css" />
+
     <!--
 
-  TemplateMo 574 Mexant
+TemplateMo 574 Mexant
 
-  https://templatemo.com/tm-574-mexant
+https://templatemo.com/tm-574-mexant
 
-  -->
+-->
     <style>
       .accordion-head {
         padding: 35px 0px !important;
@@ -81,23 +96,28 @@
         cursor: pointer;
         transition: color 200ms ease-in-out;
       }
+
       @media screen and (min-width: 768px) {
         .accordion-head {
           padding: 1rem;
           font-size: 1.2rem;
         }
       }
+
       .accordion-head .icon {
         float: right;
         transition: transform 200ms ease-in-out;
       }
+
       .accordion-head.is-open {
         color: #43ba7f;
         border-bottom: none;
       }
+
       .accordion-head.is-open .icon {
         transform: rotate(45deg);
       }
+
       .accordion-body {
         padding: 0px;
         overflow: hidden;
@@ -105,10 +125,12 @@
         transition: height 300ms ease-in-out;
         border-bottom: 1px solid #fff;
       }
+
       .accordion-body > .content p {
         padding: 0px 0px 30px 0px;
         padding-top: 0;
       }
+
       section.top-section .left-image img {
         border-radius: 10px;
       }
@@ -134,7 +156,6 @@
     <!-- Spinner End -->
 
     <!-- 탑 바 시작 -->
-
     <!-- 탑 바 끝 -->
 
     <!-- 네비게이션 바 시작 -->
@@ -167,45 +188,58 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <div class="nav-item dropdown">
-                    <a th:href="@{/admin/notice/manager}" class="nav-link dropdown-toggle">공지사항 관리</a>
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/about/overview}" class="dropdown-item">공지사항 관리하기</a> <a-->
-                    <!--                  th:href="@{/about/team}" class="dropdown-item"></a> <a-->
-                    <!--                  th:href="@{/about/history}" class="dropdown-item">회사 연혁</a>-->
-                    <!--              </div>-->
-                </div>
+          <div class="navbar-nav ms-auto py-0">
+            <div class="nav-item dropdown">
+              <a
+                th:href="@{/admin/notice/manager}"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >공지사항 관리</a
+              >
+              <!--              <div class="dropdown-menu m-0">-->
+              <!--                <a th:href="@{/about/overview}" class="dropdown-item">공지사항 관리하기</a> <a-->
+              <!--                  th:href="@{/about/team}" class="dropdown-item"></a> <a-->
+              <!--                  th:href="@{/about/history}" class="dropdown-item">회사 연혁</a>-->
+              <!--              </div>-->
+            </div>
 
+            <div class="nav-item dropdown">
+              <a
+                th:href="@{/admin/faq/manager}"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >FAQ 관리</a
+              >
+              <!--              <div class="dropdown-menu m-0">-->
+              <!--                <a th:href="@{/project/current}" class="dropdown-item">현 프로젝트-->
+              <!--                  - PADO</a> <a th:href="@{/project/projects}" class="dropdown-item">프로젝트들</a>-->
+              <!--                <a th:href="@{/project/gallery}" class="dropdown-item">제품 갤러리</a>-->
+              <!--              </div>-->
+            </div>
 
-                <div class="nav-item dropdown">
-                    <a th:href="@{/admin/faq/manager}" class="nav-link dropdown-toggle">FAQ 관리</a>
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/project/current}" class="dropdown-item">현 프로젝트-->
-                    <!--                  - PADO</a> <a th:href="@{/project/projects}" class="dropdown-item">프로젝트들</a>-->
-                    <!--                <a th:href="@{/project/gallery}" class="dropdown-item">제품 갤러리</a>-->
-                    <!--              </div>-->
-                </div>
+            <div class="nav-item dropdown">
+              <a
+                th:href="@{/admin/contactType/manager}"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                >문의사항 유형 관리</a
+              >
+              <!--              <div class="dropdown-menu m-0">-->
+              <!--                <a th:href="@{/support/notice}" class="dropdown-item">공지사항</a> <a-->
+              <!--                  th:href="@{/support/faqlist}" class="dropdown-item">FAQ</a> <a-->
+              <!--                  th:href="@{/support/contact}" class="dropdown-item">문의하기</a>-->
+              <!--              </div>-->
+              <!--            </div>-->
 
-                <div class="nav-item dropdown">
-                    <a th:href="@{/admin/contactType/manager}" class="nav-link dropdown-toggle">문의사항 유형 관리</a>
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/support/notice}" class="dropdown-item">공지사항</a> <a-->
-                    <!--                  th:href="@{/support/faqlist}" class="dropdown-item">FAQ</a> <a-->
-                    <!--                  th:href="@{/support/contact}" class="dropdown-item">문의하기</a>-->
-                    <!--              </div>-->
-                    <!--            </div>-->
-
-                    <!--            <div class="nav-item dropdown">-->
-                    <!--              <a href="#" class="nav-link dropdown-toggle"-->
-                    <!--                 data-bs-toggle="dropdown">투자자 정보</a>-->
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/investor/details}" class="dropdown-item">투자 정보</a>-->
-                    <!--                <a th:href="@{/investor/financial}" class="dropdown-item">재무-->
-                    <!--                  정보</a> <a th:href="@{/investor/press}" class="dropdown-item">언론-->
-                    <!--                보도</a>-->
-                    <!--              </div>-->
-                </div>
+              <!--            <div class="nav-item dropdown">-->
+              <!--              <a href="#" class="nav-link dropdown-toggle"-->
+              <!--                 data-bs-toggle="dropdown">투자자 정보</a>-->
+              <!--              <div class="dropdown-menu m-0">-->
+              <!--                <a th:href="@{/investor/details}" class="dropdown-item">투자 정보</a>-->
+              <!--                <a th:href="@{/investor/financial}" class="dropdown-item">재무-->
+              <!--                  정보</a> <a th:href="@{/investor/press}" class="dropdown-item">언론-->
+              <!--                보도</a>-->
+              <!--              </div>-->
             </div>
           </div>
         </div>
@@ -221,52 +255,91 @@
       >
         <div class="row py-5">
           <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-            <h1 class="display-4 text-white animated zoomIn">FAQ</h1>
+            <h1 class="display-4 text-white animated zoomIn">공지사항</h1>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-15 align-self-center">
-            <div class="d-flex justify-content-end mb-3">
-              <a th:href="@{/admin/faq/create}" class="btn btn-primary btn-sm"
-                >글쓰기</a
-              >
+      <div class="modal fade" id="searchModal1" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content" style="background: rgba(9, 30, 62, 0.7)">
+            <div class="modal-header border-0">
+              <button
+                type="button"
+                class="btn bg-white btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
-            <div class="accordions is-first-expanded">
-              <article class="accordion" th:each="faq : ${faqs}">
-                <div class="accordion-head">
-                  <span th:text="${faq.title}"></span>
-                  <span class="icon">
-                    <i class="icon fa fa-chevron-right"></i>
-                  </span>
-                </div>
-                <div class="accordion-body">
-                  <div class="content">
-                    <p th:utext="${faq.content}"></p>
-                    <a
-                      class="btn btn-warning btn-sm"
-                      th:href="@{|/admin/faq/update/faqID=${faq.getId()}|}"
-                      >수정</a
-                    >
-                    <a
-                      class="btn btn-danger btn-sm"
-                      th:href="@{|/admin/faq/delete/faqID=${faq.getId()}|}"
-                      >삭제</a
-                    >
+            <div
+              class="modal-body d-flex align-items-center justify-content-center"
+            >
+              <div class="input-group" style="max-width: 600px">
+                <input
+                  type="text"
+                  class="form-control bg-transparent border-primary p-3"
+                  placeholder="Type search keyword"
+                />
+                <button class="btn btn-primary px-4">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact Start -->
+      <div class="container-fluid py-1">
+        <div class="container py-1">
+          <div class="row g-1 justify-content-center">
+            <div class="col-lg-6">
+              <h5 class="text-center mb-4">문의사항 유형 작성</h5>
+              <form
+                th:action="@{|/admin/contactType/${contactType.id == null ? 'create' : 'update'}|}"
+                method="post"
+              >
+                <input
+                  type="hidden"
+                  name="${_csrf.parameterName}"
+                  value="${_csrf.token}"
+                />
+                <input
+                  type="hidden"
+                  name="id"
+                  th:value="${contactType.id != null ? contactType.id : null}"
+                />
+                <div class="row g-2">
+                  <!--              <div class="col-12">-->
+                  <!--                <input-->
+                  <!--                    type="text"-->
+                  <!--                    class="form-control border-0 bg-light px-4"-->
+                  <!--                    placeholder="제목을 입력하세요."-->
+                  <!--                    th:value="${faq.title != null ? faq.title : null}"-->
+                  <!--                    name="title"-->
+                  <!--                    style="height: 55px"-->
+                  <!--                />-->
+                  <!--              </div>-->
+                  <div class="col-12">
+                    <textarea
+                      id="summernote"
+                      placeholder="내용을 입력하세요."
+                      th:text="${contactType.content != null ? contactType.content : null}"
+                      name="content"
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary w-100 py-3" type="submit">
+                      등록
+                    </button>
                   </div>
                 </div>
-              </article>
+              </form>
             </div>
           </div>
         </div>
       </div>
+      <!-- Contact End -->
     </section>
     <!-- Full Screen Search End -->
-
-    <!-- Vendor Start -->
-
-    <!-- Vendor End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light mt-5">
@@ -362,7 +435,10 @@
     ></a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!--    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/lib/wow/wow.min.js"></script>
     <script src="/lib/easing/easing.min.js"></script>
@@ -375,15 +451,16 @@
 
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--    <script src="/vendor/jquery/jquery.min.js"></script>-->
+    <!--    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>-->
 
-    <script src="/assets/js/isotope.min.js"></script>
-    <script src="/assets/js/owl-carousel.js"></script>
+    <!--    <script src="/assets/js/isotope.min.js"></script>-->
+    <!--    <script src="/assets/js/owl-carousel.js"></script>-->
 
-    <script src="/assets/js/tabs.js"></script>
-    <script src="/assets/js/swiper.js"></script>
-    <script src="/assets/js/custom.js"></script>
+    <!--    <script src="/assets/js/tabs.js"></script>-->
+    <!--    <script src="/assets/js/swiper.js"></script>-->
+    <!--    <script src="/assets/js/custom.js"></script>-->
+
     <script>
       var interleaveOffset = 0.5;
 
@@ -427,6 +504,32 @@
       };
 
       var swiper = new Swiper(".swiper-container", swiperOptions);
+    </script>
+
+    <!-- Summer note -->
+    <script>
+      $(document).ready(function () {
+        let placeholderText = $("#summernote").data("placeholder");
+
+        if (!placeholderText) {
+          placeholderText = "공지사항 내용을 입력해주세요.";
+        }
+
+        $("#summernote").summernote({
+          placeholder: placeholderText,
+          tabsize: 2,
+          height: 120,
+          toolbar: [
+            ["style", ["style"]],
+            ["font", ["bold", "underline", "clear"]],
+            ["color", ["color"]],
+            ["para", ["ul", "ol", "paragraph"]],
+            ["table", ["table"]],
+            ["insert", ["link", "picture", "video"]],
+            ["view", ["fullscreen", "codeview", "help"]],
+          ],
+        });
+      });
     </script>
   </body>
 </html>

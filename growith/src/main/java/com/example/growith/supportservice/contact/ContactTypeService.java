@@ -15,17 +15,18 @@ import java.util.Optional;
 import java.util.List;
 
 @RequiredArgsConstructor
-
-@Controller
+@Service
 public class ContactTypeService {
     private final ContactTypeRepository contactTypeRepository;
+    private final ContactRepository contactRepository;
 
     public void createContactType(ContactType contactType) {
         contactTypeRepository.save(contactType);
     }
 
-    public void deleteContactType(ContactType contactType) {
-        contactTypeRepository.delete(contactType);
+    public void deleteContactType(Integer id) {
+        contactRepository.updateTypeIdToNull(id);
+        contactTypeRepository.deleteById(id);
     }
 
     public void updateContactType(ContactType contactType) {
@@ -33,7 +34,7 @@ public class ContactTypeService {
     }
 
     public ContactType findById(Integer typeId) {
-        ContactType contactType = contactTypeRepository.findById(typeId).orElseThrow(() -> new IllegalArgumentException("Invalid contact type Id: " + typeId));
+        ContactType contactType = contactTypeRepository.findById(typeId).orElse(null);
         return contactType;
     }
 

@@ -48,9 +48,9 @@
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
-<!--    <script src="./assets_windmill/js/init-alpine.js"></script>-->
-<!--    <script src="./assets_windmill/js/charts-lines.js" defer></script>-->
-<!--    <script src="./assets_windmill/js/charts-pie.js" defer></script>-->
+    <!--    <script src="./assets_windmill/js/init-alpine.js"></script>-->
+    <!--    <script src="./assets_windmill/js/charts-lines.js" defer></script>-->
+    <!--    <script src="./assets_windmill/js/charts-pie.js" defer></script>-->
 
     <link
       rel="stylesheet"
@@ -133,8 +133,7 @@
     </style>
   </head>
 
-<body>
-
+  <body>
     <!-- Spinner Start -->
     <div
       id="spinner"
@@ -151,23 +150,40 @@
     <!-- 네비게이션 바 시작 -->
     <div class="container-fluid position-relative p-0">
       <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-
-        <a th:href="@{/}" class="navbar-brand p-0"> <img
-            src="/img/growith_logo_whitewhale.png" alt="Growith Whale Logo"
-            class="whale-logo" style="height: 45px;"> <!-- 고래 로고 --> <img
-            src="/img/growith_logo_white.png" alt="Growith Logo"
-            class="main-logo" style="height: 30px;"> <!-- 일반 로고 -->
+        <a th:href="@{/}" class="navbar-brand p-0">
+          <img
+            src="/img/growith_logo_whitewhale.png"
+            alt="Growith Whale Logo"
+            class="whale-logo"
+            style="height: 45px"
+          />
+          <!-- 고래 로고 -->
+          <img
+            src="/img/growith_logo_white.png"
+            alt="Growith Logo"
+            class="main-logo"
+            style="height: 30px"
+          />
+          <!-- 일반 로고 -->
         </a>
 
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
           <span class="fa fa-bars"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
             <div class="nav-item dropdown">
-              <a th:href="@{/admin/notice/manager}" class="nav-link dropdown-toggle">공지사항 관리</a>
+              <a
+                th:href="@{/admin/notice/manager}"
+                class="nav-link dropdown-toggle"
+                >공지사항 관리</a
+              >
               <!--              <div class="dropdown-menu m-0">-->
               <!--                <a th:href="@{/about/overview}" class="dropdown-item">공지사항 관리하기</a> <a-->
               <!--                  th:href="@{/about/team}" class="dropdown-item"></a> <a-->
@@ -176,7 +192,11 @@
             </div>
 
             <div class="nav-item dropdown">
-              <a th:href="@{/admin/faq/manager}" class="nav-link dropdown-toggle">FAQ 관리</a>
+              <a
+                th:href="@{/admin/faq/manager}"
+                class="nav-link dropdown-toggle"
+                >FAQ 관리</a
+              >
               <!--              <div class="dropdown-menu m-0">-->
               <!--                <a th:href="@{/project/current}" class="dropdown-item">현 프로젝트-->
               <!--                  - PADO</a> <a th:href="@{/project/projects}" class="dropdown-item">프로젝트들</a>-->
@@ -185,7 +205,11 @@
             </div>
 
             <div class="nav-item dropdown">
-              <a th:href="@{/admin/contactType/manage}" class="nav-link dropdown-toggle">문의사항 유형 관리</a>
+              <a
+                th:href="@{/admin/contactType/manager}"
+                class="nav-link dropdown-toggle"
+                >문의사항 유형 관리</a
+              >
               <!--              <div class="dropdown-menu m-0">-->
               <!--                <a th:href="@{/support/notice}" class="dropdown-item">공지사항</a> <a-->
               <!--                  th:href="@{/support/faqlist}" class="dropdown-item">FAQ</a> <a-->
@@ -212,8 +236,8 @@
     <!-- Full Screen Search Start -->
     <section class="top-section position-relative">
       <div
-          class="container-fluid bg-primary py-5 bg-header"
-          style="margin-bottom: 90px"
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
       >
         <div class="row py-5">
           <div class="col-12 pt-lg-5 mt-lg-5 text-center">
@@ -242,10 +266,14 @@
                 <div class="accordion-body">
                   <div class="content">
                     <p th:utext="${notice.content}"></p>
-                    <a class="btn btn-warning btn-sm" th:href="@{|/admin/notice/update/noticeID=${notice.getId()}|}"
+                    <a
+                      class="btn btn-warning btn-sm"
+                      th:href="@{|/admin/notice/update/noticeID=${notice.getId()}|}"
                       >수정</a
                     >
-                    <a class="btn btn-danger btn-sm" th:href="@{|/admin/notice/delete/noticeID=${notice.getId()}|}"
+                    <a
+                      class="btn btn-danger btn-sm"
+                      th:href="@{|/admin/notice/delete/noticeID=${notice.getId()}|}"
                       >삭제</a
                     >
                   </div>
