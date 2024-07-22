@@ -36,12 +36,4 @@ public class ContactService {
             throw new DataNotFoundException("문의사항을 찾을 수 없습니다.");
         }
     }
-
-    public Contact getContact(Integer id) {
-        return contactRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid contact Id: " + id));
-    }
-
-    public List<Contact> getAllContact() {
-        return contactRepository.findAll();
-    }
 }

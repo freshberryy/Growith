@@ -1,13 +1,12 @@
 package com.example.growith.admin;
 
 import com.example.growith.supportservice.contact.ContactType;
-import com.example.growith.supportservice.contact.ContactTypeService;
+import com.example.growith.supportservice.contact.ContactTypeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 //현재 미사용
 @PreAuthorize("hasRole('ADMIN')")
@@ -15,11 +14,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequiredArgsConstructor
 @Controller
 public class AdminContactTypeController {
-    private final ContactTypeService contactTypeService;
+    private final AdminContactTypeService adminContactTypeService;
 
     @GetMapping("/manager")
     public String readList(Model model) {
-        model.addAttribute("contactTypes", contactTypeService.getAllContactType());
+        model.addAttribute("contactTypes", adminContactTypeService.getAllContactTypes());
         return "admin_contactType";
     }
 
@@ -31,26 +30,26 @@ public class AdminContactTypeController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute ContactType contactType) {
-        contactTypeService.createContactType(contactType);
+        adminContactTypeService.create(contactType);
         return "redirect:/admin/contactType/manager";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable int id) {
-        contactTypeService.deleteContactType(id);
+        adminContactTypeService.deleteById(id);
         return "redirect:/admin/contactType/manager";
     }
 
     @GetMapping("/update/{id}")
     public String update(Model model, @PathVariable("id") Integer id) {
-        ContactType contactType = contactTypeService.findById(id);
+        ContactType contactType = adminContactTypeService.getById(id);
         model.addAttribute("contactType", contactType);
         return "admin_contactType_create";
     }
 
     @PostMapping("/update")
     public String update(@ModelAttribute ContactType contactType) {
-        contactTypeService.updateContactType(contactType);
+        adminContactTypeService.update(contactType);
         return "redirect:/admin/contactType/manager";
     }
 }
