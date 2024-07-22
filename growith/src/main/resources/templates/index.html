@@ -31,6 +31,20 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- 지하철 이미지 삽입을 위한 스타일값 -->
+    <style>
+        i img {
+            width: 16px; /* 원하는 크기로 조절 */
+            height: auto;
+        }
+        .navbar {
+            background-color: rgba(71, 83, 103, 0.8);
+        }
+
+
+    </style>
+
 </head>
 
 <body>
@@ -271,7 +285,71 @@
 
 
 
+    <!-- 지도 시작 -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h2 class="fw-bold text-primary text-uppercase">오시는 길</h2>
+            </div>
+        </div>
+    </div>
 
+
+
+    <div class="col-pb-3 mb-5 mx-auto" style="max-width: 80%;">
+        <iframe class="position-relative  pb-3 mb-4 rounded w-100 h-100 "
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1596.659325110283!2d127.13742274795517!3d36.83484387516335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b288924a13daf%3A0x4a4f08cd9cc8ae2f!2z7Lap7LKt64Ko64-EIOyynOyViOyLnCDshJzrtoHqtawg65GQ7KCV7KSRMeq4uCA2LTkgMuy4tSAyMDEtMu2YuA!5e0!3m2!1sko!2skr!4v1721262470270!5m2!1sko!2skr"
+                frameborder="0" style="min-height: 500px; border:0;" aria-hidden="false"
+                tabindex="0"></iframe>
+    </div>
+
+
+    <div class="col-lg-4 ms-6" style="width: 900px;">
+        <div class="d-flex align-items-center ms-5">
+            <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 40px; height: 40px;">
+                <i class="fa fa-map-marker-alt text-white"></i>
+            </div>
+            <div class="pb-4 ms-3">
+                <br> <h6 class="text-primary mb-0">충청남도 천안시 서북구 두정중1길 6-9, 2층 201-2호 (두정동, 대림빌딩)</h6>
+            </div>
+
+
+            <div class="bg-primary d-flex align-items-center justify-content-center rounded ms-5"  style="width: 40px; height: 40px;">
+                <i class="fa fa-phone-alt text-white"></i>
+            </div>
+            <div class="ms-3">
+                <h6 class="text-primary mb-0">+82 010-2429-8020</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 ms-6" style="width: 1000px;">
+        <div class="d-flex align-items-center ms-5">
+            <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 40px; height: 40px;">
+
+                <i class="fa fa-bus-alt text-white"></i>
+
+            </div>
+            <div class="pb-4 ms-3">
+                <br> <h6 class="text-primary mb-0">두정대림아파트 하차 도보로 3분, 두정역푸르지오 남문 하차 도보로 3분</h6>
+            </div>
+
+
+            <div class="bg-primary d-flex align-items-center justify-content-center rounded ms-8"  style="width: 40px; height: 40px;">
+                <i><img src="https://bucket-s9r52c.s3.ap-northeast-2.amazonaws.com/%EC%A7%80%ED%95%98%EC%B2%A0.png.png"></i>
+            </div>
+            <div class="ms-3">
+                <h6 class="text-primary mb-0">두정역 1번 출구 도보로 17분</h6>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- 지도 끝 -->
 
 
 
