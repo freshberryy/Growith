@@ -17,17 +17,11 @@ public class FaqController {
 	@Autowired
     private final FaqService faqService;
 
-	@GetMapping("/faqlist")
+	@GetMapping("/faq")
 	public String faq(Model model) {
 		
 		model.addAttribute("faqs", faqService.readList());
 		
 		return "support_faq";
-	}
-	
-	@GetMapping("/faq/readdetail/{id}")
-	public String readdetail(Model model, @PathVariable("id") Integer id) {
-		model.addAttribute("faqs", faqService.readdetail(id));
-		return "support_faq_readdetail";
 	}
 }

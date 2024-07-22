@@ -21,7 +21,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests //http 요청에 대한 권한 설정하는 메서드
                         .requestMatchers("/admin/login").permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN"))
+                        .requestMatchers("/admin/signup").permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
+                        .anyRequest().permitAll()
+                )
                 .formLogin((formLogin) -> formLogin.loginPage("/admin/login")
                         .defaultSuccessUrl("/admin/notice/manager", true)
                         .usernameParameter("email")
