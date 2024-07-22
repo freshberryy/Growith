@@ -13,15 +13,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class FaqController {
-	
-	@Autowired
     private final FaqService faqService;
 
 	@GetMapping("/faq")
 	public String faq(Model model) {
-		
 		model.addAttribute("faqs", faqService.readList());
-		
 		return "support_faq";
 	}
 }
