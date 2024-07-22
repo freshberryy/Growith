@@ -12,7 +12,7 @@ public class MemberController {
     private MemberService memberService;
 
     //로그인
-    @GetMapping("/admin")
+    @GetMapping("/admin/login")
     public String login() {
         return "admin_login";
     }
