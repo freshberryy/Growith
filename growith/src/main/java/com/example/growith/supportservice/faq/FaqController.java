@@ -17,7 +17,7 @@ public class FaqController {
 	@Autowired
     private final FaqService faqService;
 
-	@GetMapping("/faq")
+	@GetMapping("/faqlist")
 	public String faq(Model model) {
 		
 		model.addAttribute("faqs", faqService.readList());
