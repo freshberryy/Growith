@@ -19,8 +19,14 @@ public class AdminNoticeController {
     private final HtmlSanitizerService htmlSanitizerService;
     private final AdminNoticeService adminNoticeService;
 
+//    @GetMapping("/manager")
+//    public String readList(Model model) {
+//        model.addAttribute("notices", noticeService.readList());
+//        return "admin_notice_manager";
+//    }
+
     @GetMapping("/manager")
-    public String readList(Model model) {
+    public String adminNotice(Model model) {
         model.addAttribute("notices", noticeService.readList());
         return "admin_notice_manager";
     }
@@ -40,7 +46,7 @@ public class AdminNoticeController {
     @GetMapping("/delete/noticeID={id}")
     public String noticeDelete(@PathVariable("id") Integer id) {
         adminNoticeService.deleteNotice(id);
-        return "redirect:/admin/notice";
+        return "redirect:/admin/notice/manager";
     }
 
     @GetMapping("/update/noticeID={id}")
@@ -55,6 +61,6 @@ public class AdminNoticeController {
         String sanitizedContent = htmlSanitizerService.sanitizeHtml(notice.getContent());
         notice.setContent(sanitizedContent);
         adminNoticeService.updateNotice(notice);
-        return "redirect:/admin/notice";
+        return "redirect:/admin/notice/manager";
     }
 }
