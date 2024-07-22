@@ -23,7 +23,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests //http 요청에 대한 권한 설정하는 메서드
                         .requestMatchers(new AntPathRequestMatcher("/**")).permitAll())
-                .formLogin((formLogin) -> formLogin.loginPage("/admin")
+                .formLogin((formLogin) -> formLogin.loginPage("/admin/login")
                         .defaultSuccessUrl("/admin/notice/manager"))
                 .logout((logout) -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/signout"))
                         .invalidateHttpSession(true));
