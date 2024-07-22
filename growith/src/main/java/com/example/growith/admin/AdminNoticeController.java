@@ -27,7 +27,7 @@ public class AdminNoticeController {
 
     @GetMapping("/manager")
     public String adminNotice(Model model) {
-        model.addAttribute("notices", noticeService.readList());
+        model.addAttribute("notices", adminNoticeService.getAllNotices());
         return "admin_notice_manager";
     }
 
@@ -39,7 +39,7 @@ public class AdminNoticeController {
 
     @PostMapping("/create")
     public String noticeCreate(@ModelAttribute Notice notice) {
-        noticeService.create(notice);
+        adminNoticeService.createNotice(notice);
         return "redirect:/admin/notice/manager";
     }
 
