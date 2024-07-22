@@ -10,19 +10,12 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.Optional;
+
+
 import java.util.List;
 
-<<<<<<< HEAD
 @RequiredArgsConstructor
 @Service
-=======
-import org.springframework.stereotype.Service;
-
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor
-@Controller
->>>>>>> main
 public class ContactTypeService {
     private final ContactTypeRepository contactTypeRepository;
     private final ContactRepository contactRepository;
