@@ -22,14 +22,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class AdminFaqController {
-	
-    private final FaqService faqService;
-    private final AdminFaqService adminfaqService;
+    private final AdminFaqService adminFaqService;
     
     
     @GetMapping("/manager")
     public String getFaqList(Model model) {
-        List<Faq> faqList = adminfaqService.getAllFaqs();
+        List<Faq> faqList = adminFaqService.getAllFaqs();
         model.addAttribute("faqs", faqList);
         return "admin_faq_manager";
     }
@@ -42,26 +40,26 @@ public class AdminFaqController {
 
     @PostMapping("/create")
     public String faqCreate(@ModelAttribute Faq faq) {
-        adminfaqService.createFaq(faq);
+        adminFaqService.createFaq(faq);
         return "redirect:/admin/faq/manager";
     }
 
     @GetMapping("/delete/faqID={id}")
     public String faqDelete(@PathVariable("id") Integer id) {
-        adminfaqService.deleteFaq(id);
+        adminFaqService.deleteFaq(id);
         return "redirect:/admin/faq/manager";
     }
 
     @GetMapping("/update/faqID={id}")
     public String faqUpdate(@PathVariable("id") Integer id, Model model) {
-    	Faq faq = adminfaqService.getFaq(id);
+    	Faq faq = adminFaqService.getFaq(id);
         model.addAttribute("faq", faq);
         return "admin_faq_create";
     }
 
-    @PostMapping("/update/faqID={id}")
-    public String faqUpdate(@ModelAttribute Faq faq, @PathVariable("id") Integer id) {
-        adminfaqService.updateFaq(faq);
+    @PostMapping("/update")
+    public String faqUpdate(@ModelAttribute Faq faq) {
+        adminFaqService.updateFaq(faq);
         return "redirect:/admin/faq/manager";
     }
 }

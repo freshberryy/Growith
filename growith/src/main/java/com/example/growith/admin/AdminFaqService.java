@@ -16,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class AdminFaqService {
-    private final FaqService faqService;
     private final FaqRepository faqRepository;
     
     public List<Faq> getAllFaqs() {
@@ -32,6 +31,7 @@ public class AdminFaqService {
 	public void deleteFaq(Integer id) {
 		faqRepository.deleteById(id);
 	}
+
 	public void updateFaq(Faq faq) {
 		faqRepository.save(faq);
 	}
