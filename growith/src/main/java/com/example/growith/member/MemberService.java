@@ -1,6 +1,6 @@
 package com.example.growith.member;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -12,15 +12,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class MemberService implements UserDetailsService {
-
-    @Autowired
-    MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Override
     //유저가 로그인하면 스프링 시큐리티는 UserDetailService를 호출하고 loadUserByUsername을 호출하여 로그인 정보와 DB의 정보 비교
