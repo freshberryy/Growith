@@ -1,189 +1,201 @@
 <!DOCTYPE html>
 <html xmlns:th="http//www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/layout}">
+         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+         layout:decorate="~{layouts/layout}">
 <head>
-  <title> support_faq </title>
-  <th:block layout:fragment="css">
-    <!-- css 2번쨰 -->
-    <link rel="stylesheet" href="/assets/css/animate.css">
+	<title> support_faq </title>
+	<th:block layout:fragment="css">
+	<!-- css 2번쨰 -->
+		    <link rel="stylesheet" href="/assets/css/animate.css">
+		 	<!--
 
+		TemplateMo 574 Mexant
+
+		https://templatemo.com/tm-574-mexant
+
+		-->
     <style>
-      .accordion-head {
-        padding: 35px 0px !important;
-        font-size: 22px;
-        font-weight: 600;
-        color: #212741;
-        cursor: pointer;
-        transition: color 200ms ease-in-out;
-
-      }
-
-      @media screen and (min-width: 768px) {
         .accordion-head {
-          padding: 1rem;
-          font-size: 1.2rem;
+            padding: 35px 0px !important;
+            font-size: 22px;
+            font-weight: 600;
+            color: #212741;
+            cursor: pointer;
+            transition: color 200ms ease-in-out;
+
         }
-      }
+        @media screen and (min-width: 768px) {
+            .accordion-head {
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
+        }
+        .accordion-head .icon {
+            float: right;
+            transition: transform 200ms ease-in-out;
+        }
+        .accordion-head.is-open {
+            color: #43ba7f;
+            border-bottom: none;
+        }
+        .accordion-head.is-open .icon {
+            transform: rotate(45deg);
+        }
+        .accordion-body {
+            padding: 0px;
+            overflow: hidden;
+            height: 0;
+            transition: height 300ms ease-in-out;
+            border-bottom: 1px solid #fff;
+        }
+        .accordion-body > .content p {
+            padding: 0px 0px 30px 0px;
+            padding-top: 0;
+        }
+        section.top-section .left-image img {
+            border-radius: 10px;
+        }
 
-      .accordion-head .icon {
-        float: right;
-        transition: transform 200ms ease-in-out;
-      }
-
-      .accordion-head.is-open {
-        color: #43ba7f;
-        border-bottom: none;
-      }
-
-      .accordion-head.is-open .icon {
-        transform: rotate(45deg);
-      }
-
-      .accordion-body {
-        padding: 0px;
-        overflow: hidden;
-        height: 0;
-        transition: height 300ms ease-in-out;
-        border-bottom: 1px solid #fff;
-      }
-
-      .accordion-body > .content p {
-        padding: 0px 0px 30px 0px;
-        padding-top: 0;
-      }
-
-      section.top-section .left-image img {
-        border-radius: 10px;
-      }
-
-      section.top-section .accordions {
-        border-radius: 5px;
-        padding: 50px 40px;
-        background-color: #fff;
-        margin-left: 30px;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-      }
+        section.top-section .accordions {
+            border-radius: 5px;
+            padding: 50px 40px;
+            background-color: #fff;
+            margin-left: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
-  </th:block>
+	</th:block>
 </head>
 <body>
-<th:block layout:fragment="content">
-  <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
-    <div class="row py-5">
-      <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-        <h1 class="display-4 text-white animated zoomIn">FAQ</h1>
-      </div>
-    </div>
-  </div>
-  <!-- Full Screen Search Start -->
-  <section class="top-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-15 align-self-center">
-          <div class="accordions is-first-expanded">
-            <div class="accordion" th:each="faq : ${paging}">
-              <article class="accordion-head">
-                <span th:text="${faq.title}"></span>
-                <span class="icon">
+	<th:block layout:fragment="content">
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">FAQ</h1>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search Start -->
+	<section class="top-section">
+	   <div class="container">
+	     <div class="row">
+	    
+	       <div class="col-lg-15 align-self-center">
+	         <div class="accordions is-first-expanded">
+	           <article class="accordion">
+	             <div class="accordion-head">
+	                 <span>FAQ 1</span>
+	                 <span class="icon">
 	                     <i class="icon fa fa-chevron-right"></i>
 	                 </span>
-              </article>
-              <article class="accordion-body">
-                <div class="content">
-                  <p th:utext="${faq.content}"></p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <!-- 페이징처리 시작 -->
-          <div th:if="${!paging.isEmpty()}" style="padding-top: 10px">
-            <ul class="pagination justify-content-center">
-              <li class="page-item" th:classappend="${!paging.hasPrevious} ? 'disabled'">
-                <a class="page-link"
-                   th:href="@{|?page=${paging.number-1}|}">
-                  <span>이전</span>
-                </a>
-              </li>
-              <li th:each="page: ${#numbers.sequence(0, paging.totalPages-1)}"
-                  th:if="${page >= paging.number-5 and page <= paging.number+5}"
-                  th:classappend="${page == paging.number} ? 'active'"
-                  class="page-item">
-                <a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
-              </li>
-              <li class="page-item" th:classappend="${!paging.hasNext} ? 'disabled'">
-                <a class="page-link" th:href="@{|?page=${paging.number+1}|}">
-                  <span>다음</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- 페이징처리 끝 -->
-        </div>
-      </div>
-    </div>
-  </section>
+	             </div>
+	             <div class="accordion-body">
+	                 <div class="content">
+	                     <p>FAQ 내용1</p>
+	                 </div>
+	             </div>
+	         </article>
+	         <article class="accordion">
+	           <div class="accordion-head">
+	               <span>FAQ 2</span>
+	               <span class="icon">
+	                   <i class="icon fa fa-chevron-right"></i>
+	               </span>
+	           </div>
+	           <div class="accordion-body">
+	               <div class="content">
+	                   <p>FAQ 내용2</p>
+	               </div>
+	           </div>
+	         </article>
+	         <article class="accordion">
+	           <div class="accordion-head">
+	               <span>FAQ 3</span>
+	               <span class="icon">
+	                   <i class="icon fa fa-chevron-right"></i>
+	               </span>
+	           </div>
+	           <div class="accordion-body">
+	               <div class="content">
+	                   <p>FAQ 내용3</p>
+	               </div>
+	           </div>
+	         </article>
+	       </div>
+	     </div>
+	   </div>
+	   </div>
+	 </section>
+
+		<!-- Full Screen Search end -->
+		<!-- Contact End -->
+	</th:block>
 
 
-  <!-- Vendor Start -->
+
+    <!-- Vendor Start -->
 
 
-  <!-- Vendor End -->
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <script src="/assets/js/isotope.min.js"></script>
-  <script src="/assets/js/owl-carousel.js"></script>
 
-  <script src="/assets/js/tabs.js"></script>
-  <script src="/assets/js/swiper.js"></script>
-  <script src="/assets/js/custom.js"></script>
-  <script>
-    var interleaveOffset = 0.5;
+    <!-- Vendor End -->
+    <!-- Scripts -->
+	  <!-- Bootstrap core JavaScript -->
+	    <script src="/vendor/jquery/jquery.min.js"></script>
+	    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    var swiperOptions = {
-      loop: true,
-      speed: 1000,
-      grabCursor: true,
-      watchSlidesProgress: true,
-      mousewheelControl: true,
-      keyboardControl: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      },
-      on: {
-        progress: function () {
-          var swiper = this;
-          for (var i = 0; i < swiper.slides.length; i++) {
-            var slideProgress = swiper.slides[i].progress;
-            var innerOffset = swiper.width * interleaveOffset;
-            var innerTranslate = slideProgress * innerOffset;
-            swiper.slides[i].querySelector(".slide-inner").style.transform =
-                "translate3d(" + innerTranslate + "px, 0, 0)";
-          }
-        },
-        touchStart: function () {
-          var swiper = this;
-          for (var i = 0; i < swiper.slides.length; i++) {
-            swiper.slides[i].style.transition = "";
-          }
-        },
-        setTransition: function (speed) {
-          var swiper = this;
-          for (var i = 0; i < swiper.slides.length; i++) {
-            swiper.slides[i].style.transition = speed + "ms";
-            swiper.slides[i].querySelector(".slide-inner").style.transition =
-                speed + "ms";
-          }
-        }
-      }
-    };
+	    <script src="/assets/js/isotope.min.js"></script>
+	    <script src="/assets/js/owl-carousel.js"></script>
 
-    var swiper = new Swiper(".swiper-container", swiperOptions);
-  </script>
-</th:block>
+	    <script src="/assets/js/tabs.js"></script>
+	    <script src="/assets/js/swiper.js"></script>
+	    <script src="/assets/js/custom.js"></script>
+	    <script>
+	        var interleaveOffset = 0.5;
+
+	      var swiperOptions = {
+	        loop: true,
+	        speed: 1000,
+	        grabCursor: true,
+	        watchSlidesProgress: true,
+	        mousewheelControl: true,
+	        keyboardControl: true,
+	        navigation: {
+	          nextEl: ".swiper-button-next",
+	          prevEl: ".swiper-button-prev"
+	        },
+	        on: {
+	          progress: function() {
+	            var swiper = this;
+	            for (var i = 0; i < swiper.slides.length; i++) {
+	              var slideProgress = swiper.slides[i].progress;
+	              var innerOffset = swiper.width * interleaveOffset;
+	              var innerTranslate = slideProgress * innerOffset;
+	              swiper.slides[i].querySelector(".slide-inner").style.transform =
+	                "translate3d(" + innerTranslate + "px, 0, 0)";
+	            }      
+	          },
+	          touchStart: function() {
+	            var swiper = this;
+	            for (var i = 0; i < swiper.slides.length; i++) {
+	              swiper.slides[i].style.transition = "";
+	            }
+	          },
+	          setTransition: function(speed) {
+	            var swiper = this;
+	            for (var i = 0; i < swiper.slides.length; i++) {
+	              swiper.slides[i].style.transition = speed + "ms";
+	              swiper.slides[i].querySelector(".slide-inner").style.transition =
+	                speed + "ms";
+	            }
+	          }
+	        }
+	      };
+
+	      var swiper = new Swiper(".swiper-container", swiperOptions);
+	    </script>
+
+
 </body>
 </html>
