@@ -59,8 +59,8 @@ public class AdminFaqController {
         return "admin_faq_create";
     }
 
-    @PostMapping("/update/faqID={id}")
-    public String faqUpdate(@ModelAttribute Faq faq, @PathVariable("id") Integer id) {
+    @PostMapping("/update")
+    public String faqUpdate(@ModelAttribute Faq faq) {
         adminfaqService.updateFaq(faq);
         return "redirect:/admin/faq/manager";
     }
