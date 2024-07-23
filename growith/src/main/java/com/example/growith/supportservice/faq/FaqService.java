@@ -1,7 +1,5 @@
 package com.example.growith.supportservice.faq;
 
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,8 +17,15 @@ public class FaqService {
 //        return faqRepository.findAll();
 //    }
 
-    public Page<Faq> getFaqs(int page) {
-        Pageable pageable = PageRequest.of(page, 10);
+//    public Page<Faq> getFaqs(int page) {
+//        Pageable pageable = PageRequest.of(page, 10);
+//        return faqRepository.findAll(pageable);
+//    }
+    public Page<Faq> getList(int page) {
+        Pageable pageable = PageRequest.of(page, 5);
+        return this.faqRepository.findAll(pageable);
+    }
+    public Page<Faq> findAll(Pageable pageable) {
         return faqRepository.findAll(pageable);
     }
 }
