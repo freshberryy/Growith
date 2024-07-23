@@ -1,208 +1,140 @@
 <!doctype html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>문의 사항 유형 목록</title>
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+<head>
+<title>문의 사항 유형 목록</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<!-- 네비게이션 바 시작 -->
+		<div class="container-fluid position-relative p-0">
+			<nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+				<a th:href="@{/}" class="navbar-brand p-0"> <img
+					src="/img/growith_logo_whitewhale.png" alt="Growith Whale Logo"
+					class="whale-logo" style="height: 45px" /> <!-- 고래 로고 -->
+					<img src="/img/growith_logo_white.png" alt="Growith Logo"
+					class="main-logo" style="height: 30px" /> <!-- 일반 로고 -->
+				</a>
 
-    <!-- Google Web Fonts -->
-    <link
-            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-    />
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+					<span class="fa fa-bars"></span>
+				</button>
 
-    <!-- Icon Font Stylesheet -->
-    <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-            rel="stylesheet"
-    />
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-            rel="stylesheet"
-    />
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<div class="navbar-nav ms-auto py-0">
+						<div class="nav-item dropdown">
+							<a th:href="@{/admin/notice/manager}"
+								class="nav-link dropdown-toggle">공지사항 관리</a>
+							<!--              <div class="dropdown-menu m-0">-->
+							<!--                <a th:href="@{/about/overview}" class="dropdown-item">공지사항 관리하기</a> <a-->
+							<!--                  th:href="@{/about/team}" class="dropdown-item"></a> <a-->
+							<!--                  th:href="@{/about/history}" class="dropdown-item">회사 연혁</a>-->
+							<!--              </div>-->
+						</div>
 
-    <!-- Libraries Stylesheet -->
-    <link
-            href="/lib/owlcarousel/assets/owl.carousel.min.css"
-            rel="stylesheet"
-    />
-    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+						<div class="nav-item dropdown">
+							<a th:href="@{/admin/faq/manager}"
+								class="nav-link dropdown-toggle">FAQ 관리</a>
+							<!--              <div class="dropdown-menu m-0">-->
+							<!--                <a th:href="@{/project/current}" class="dropdown-item">현 프로젝트-->
+							<!--                  - PADO</a> <a th:href="@{/project/projects}" class="dropdown-item">프로젝트들</a>-->
+							<!--                <a th:href="@{/project/gallery}" class="dropdown-item">제품 갤러리</a>-->
+							<!--              </div>-->
+						</div>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+						<div class="nav-item dropdown">
+							<a th:href="@{/admin/contactType/manager}"
+								class="nav-link dropdown-toggle">문의사항 유형
+								관리</a>
+							<!--              <div class="dropdown-menu m-0">-->
+							<!--                <a th:href="@{/support/notice}" class="dropdown-item">공지사항</a> <a-->
+							<!--                  th:href="@{/support/faqlist}" class="dropdown-item">FAQ</a> <a-->
+							<!--                  th:href="@{/support/contact}" class="dropdown-item">문의하기</a>-->
+							<!--              </div>-->
+							<!--            </div>-->
 
-    <!-- Template Stylesheet -->
-    <link href="/css/style.css" rel="stylesheet" />
+							<!--            <div class="nav-item dropdown">-->
+							<!--              <a href="#" class="nav-link dropdown-toggle"-->
+							<!--                 data-bs-toggle="dropdown">투자자 정보</a>-->
+							<!--              <div class="dropdown-menu m-0">-->
+							<!--                <a th:href="@{/investor/details}" class="dropdown-item">투자 정보</a>-->
+							<!--                <a th:href="@{/investor/financial}" class="dropdown-item">재무-->
+							<!--                  정보</a> <a th:href="@{/investor/press}" class="dropdown-item">언론-->
+							<!--                보도</a>-->
+							<!--              </div>-->
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!-- Navbar End -->
 
-    <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/tailwind.output.css" />
-    <script
-            src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-            defer
-    ></script>
-    <!--    <script src="./assets_windmill/js/init-alpine.js"></script>-->
-    <!--    <script src="./assets_windmill/js/charts-lines.js" defer></script>-->
-    <!--    <script src="./assets_windmill/js/charts-pie.js" defer></script>-->
-
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
-    />
-    <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-            defer
-    ></script>
-    
-  </head>
-  <body>
-    
-      <!-- 네비게이션 바 시작 -->
-<div class="container-fluid position-relative p-0">
-    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-
-        <a th:href="@{/}" class="navbar-brand p-0">
-            <img src="/img/growith_logo_whitewhale.png" alt="Growith Whale Logo" class="whale-logo" style="height:45px;"> <!-- 고래 로고 -->
-            <img src="/img/growith_logo_white.png" alt="Growith Logo" class="main-logo" style="height:30px;"> <!-- 일반 로고 -->
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="fa fa-bars"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-                <div class="nav-item dropdown">
-                    <a th:href="@{/admin/notice/manager}" class="nav-link dropdown-toggle">공지사항 관리</a>
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/about/overview}" class="dropdown-item">공지사항 관리하기</a> <a-->
-                    <!--                  th:href="@{/about/team}" class="dropdown-item"></a> <a-->
-                    <!--                  th:href="@{/about/history}" class="dropdown-item">회사 연혁</a>-->
-                    <!--              </div>-->
-                </div>
-
-
-                <div class="nav-item dropdown">
-                    <a th:href="@{/admin/faq/manager}" class="nav-link dropdown-toggle">FAQ 관리</a>
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/project/current}" class="dropdown-item">현 프로젝트-->
-                    <!--                  - PADO</a> <a th:href="@{/project/projects}" class="dropdown-item">프로젝트들</a>-->
-                    <!--                <a th:href="@{/project/gallery}" class="dropdown-item">제품 갤러리</a>-->
-                    <!--              </div>-->
-                </div>
-
-                <div class="nav-item dropdown">
-                    <a th:href="@{/admin/contactType/manager}" class="nav-link dropdown-toggle">문의사항 유형 관리</a>
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/support/notice}" class="dropdown-item">공지사항</a> <a-->
-                    <!--                  th:href="@{/support/faqlist}" class="dropdown-item">FAQ</a> <a-->
-                    <!--                  th:href="@{/support/contact}" class="dropdown-item">문의하기</a>-->
-                    <!--              </div>-->
-                    <!--            </div>-->
-
-                    <!--            <div class="nav-item dropdown">-->
-                    <!--              <a href="#" class="nav-link dropdown-toggle"-->
-                    <!--                 data-bs-toggle="dropdown">투자자 정보</a>-->
-                    <!--              <div class="dropdown-menu m-0">-->
-                    <!--                <a th:href="@{/investor/details}" class="dropdown-item">투자 정보</a>-->
-                    <!--                <a th:href="@{/investor/financial}" class="dropdown-item">재무-->
-                    <!--                  정보</a> <a th:href="@{/investor/press}" class="dropdown-item">언론-->
-                    <!--                보도</a>-->
-                    <!--              </div>-->
-                </div>
-                <div class="nav-item">
-                    <a
-                            th:href="@{/admin/signup}"
-                            class="nav-link"
-
-                    >관리자 회원가입</a
-                    >
-            </div>
-        </div>
-    </nav>
-</div>
-    <!-- Navbar End -->
-
-
-      <!-- Full Screen Search Start -->
-      <section class="top-section position-relative">
-        <div
-          class="container-fluid bg-primary py-5 bg-header"
-          style="margin-bottom: 90px"
-        >
-          <div class="row py-5">
-            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-              <h1 class="display-4 text-white animated zoomIn">
-                문의사항 유형 목록
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-15 align-self-center">
-              <div class="d-flex justify-content-end mb-3">
-                <a
-                  class="btn btn-primary mb-4"
-                  th:href="@{/admin/contactType/create}"
-                  >새 문의 사항 유형 추가</a
-                >
-              </div>
-              <div class="accordions is-first-expanded">
-                <!--                <article class="accordion" th:each="notice : ${notices}">-->
-                <!--                  <div class="accordion-head">-->
-                <!--                    <span th:text="${notice.title}"></span>-->
-                <!--                    <span class="icon">-->
-                <!--                    <i class="icon fa fa-chevron-right"></i>-->
-                <!--                  </span>-->
-                <!--                  </div>-->
-                <!--                  <div class="accordion-body">-->
-                <!--                    <div class="content">-->
-                <!--                      <p th:utext="${notice.content}"></p>-->
-                <!--                      <a class="btn btn-warning btn-sm" th:href="@{|/admin/notice/update/noticeID=${notice.getId()}|}"-->
-                <!--                      >수정</a-->
-                <!--                      >-->
-                <!--                      <a class="btn btn-danger btn-sm" th:href="@{|/admin/notice/delete/noticeID=${notice.getId()}|}"-->
-                <!--                      >삭제</a-->
-                <!--                      >-->
-                <!--                    </div>-->
-                <!--                  </div>-->
-                <!--                </article>-->
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>내용</th>
-                      <th>작업</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr th:each="contactType : ${contactTypes}">
-                      <td th:text="${contactType.id}"></td>
-                      <td th:text="${contactType.content}"></td>
-                      <td>
-                        <a
-                          class="btn btn-warning btn-sm"
-                          th:href="@{|/admin/contactType/update/${contactType.id}|}"
-                          >수정</a
-                        >
-                        <a
-                          class="btn btn-danger btn-sm"
-                          th:href="@{|/admin/contactType/delete/${contactType.id}|}"
-                          >삭제</a
-                        >
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Full Screen Search End -->
-    </div>
-  </body>
+		<!-- Full Screen Search Start -->
+		<section class="top-section position-relative">
+			<div class="container-fluid bg-primary py-5 bg-header"
+				style="margin-bottom: 90px">
+				<div class="row py-5">
+					<div class="col-12 pt-lg-5 mt-lg-5 text-center">
+						<h1 class="display-4 text-white animated zoomIn">문의사항 유형 목록</h1>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-15 align-self-center">
+						<div class="d-flex justify-content-end mb-3">
+							<a class="btn btn-primary mb-4"
+								th:href="@{/admin/contactType/create}">새
+								문의 사항 유형 추가</a>
+						</div>
+						<div class="accordions is-first-expanded">
+							<!--                <article class="accordion" th:each="notice : ${notices}">-->
+							<!--                  <div class="accordion-head">-->
+							<!--                    <span th:text="${notice.title}"></span>-->
+							<!--                    <span class="icon">-->
+							<!--                    <i class="icon fa fa-chevron-right"></i>-->
+							<!--                  </span>-->
+							<!--                  </div>-->
+							<!--                  <div class="accordion-body">-->
+							<!--                    <div class="content">-->
+							<!--                      <p th:utext="${notice.content}"></p>-->
+							<!--                      <a class="btn btn-warning btn-sm" th:href="@{|/admin/notice/update/noticeID=${notice.getId()}|}"-->
+							<!--                      >수정</a-->
+							<!--                      >-->
+							<!--                      <a class="btn btn-danger btn-sm" th:href="@{|/admin/notice/delete/noticeID=${notice.getId()}|}"-->
+							<!--                      >삭제</a-->
+							<!--                      >-->
+							<!--                    </div>-->
+							<!--                  </div>-->
+							<!--                </article>-->
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>내용</th>
+										<th>작업</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="contactType : ${contactTypes}">
+										<td th:text="${contactType.id}"></td>
+										<td th:text="${contactType.content}"></td>
+										<td><a class="btn btn-warning btn-sm"
+											th:href="@{|/admin/contactType/update/${contactType.id}|}">수정</a>
+											<a class="btn btn-danger btn-sm"
+											th:href="@{|/admin/contactType/delete/${contactType.id}|}">삭제</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Full Screen Search End -->
+	</div>
+</body>
 </html>
