@@ -34,8 +34,7 @@ public class SendMailService {
         helper.setReplyTo(email);
         helper.setTo("hs381717@gmail.com");
         helper.setSubject(EMAIL_TITLE_PREFIX + "[" + contact.getType().getContent() + "] " + contact.getSubject());
-        helper.setText(contact.getContent() + "\n\n" + "발신자: " + contact.getName() + "\n" +
-                "연락처: " + contact.getPhone());
+        helper.setText(contact.getContent() + "\n\n" + "발신자: " + contact.getName());
 
 //        SimpleMailMessage message = new SimpleMailMessage();
 //        message.setTo("hs381717@naver.com");
