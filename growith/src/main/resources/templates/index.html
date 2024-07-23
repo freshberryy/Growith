@@ -195,7 +195,7 @@
             <h1 class="mb-0">저희 회사를 소개합니다</h1>
         </div>
         <div class="request-quote-container text-center mb-4">
-            <button class="btn btn-primary py-2 px-4 mt-2" th:onclick="'location.href=\'' + @{/about/overview} + '\''">GROWITH 더 알아보기</button>
+            <a th:href="@{/about/overview}" class="btn btn-primary py-3 px-5 mt-3">Growith 더 알아보기</a>
         </div>
         <div class="row g-5">
             <div class="col-lg-3">
@@ -267,7 +267,7 @@
         <div class="row g-5">
             <div class="col-lg-5" style="min-height: 400px;">
                 <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100 rounded" src="img/about.jpg" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-100 rounded" src="img/eeproduct.jpg" style="object-fit: cover;">
                 </div>
             </div>
             <div class="col-lg-7">
@@ -360,60 +360,97 @@
     <!-- Testimonial End -->
 
 
-    
 
 
 
-   <!-- Footer Start -->
-   <div class="container-fluid bg-dark text-light mt-5">
-       <div class="container">
-           <div class="row gx-5">
-               <div class="col-lg-8 col-md-6">
-                   <div class="row gx-5">
-                       <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                           <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                               <img src="img/growith_logo_white.png" alt="Growith Logo" class="me-2" style="height:30px;">
-                           </div>
-                           <div class="d-flex mb-2">
-                               <i class="bi bi-geo-alt text-primary me-2"></i>
-                               <p class="mb-0">충청남도 천안시 서북구 두정중1길 6-9, 2층 201-2호 (두정동, 대림빌딩)</p>
-                           </div>
-                           <div class="d-flex mb-2">
-                               <i class="bi bi-envelope-open text-primary me-2"></i>
-                               <p class="mb-0">myeng07@naver.com</p>
-                           </div>
-                           <div class="d-flex mb-2">
-                               <i class="bi bi-telephone text-primary me-2"></i>
-                               <p class="mb-0">+82 010-2429-8020</p>
-                           </div>
-                           <div class="d-flex mt-4">
-                               <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                               <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                               <a class="btn btn-primary btn-square me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                               <a class="btn btn-primary btn-square" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-   <div class="container-fluid text-white" style="background: #061429;">
-       <div class="container text-center">
-           <div class="row justify-content-start">
-               <div class="col-lg-8 col-md-6">
-                   <div class="d-flex align-items-center" style="height: 75px; justify-content: flex-start;">
-                       <p class="mb-0 me-2">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All Rights Reserved.</p>
-                       <p class="mb-0 me-2">Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
-                       <p class="mb-0">Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="d-flex col-lg-4 col-md-12 pt-5 mb-5">
+                            <div
+                                    class="section-title section-title-sm position-relative pb-3 mb-4"
+                            >
+                                <img
+                                        src="/img/growith_logo_white.png"
+                                        alt="Growith Logo"
+                                        class="me-2"
+                                        style="height: 30px"
+                                />
+                            </div>
+
+                            <div class="d-flex ms-5">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0" style="width: 530px;">
+                                    충청남도 천안시 서북구 두정중1길 6-9, 2층 201-2호 (두정동, 대림빌딩)
+                                </p>
+                            </div>
+                            <div class="d-flex ms-3">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">myeng07@naver.com</p>
+                            </div>
+                            <div class="d-flex ms-5">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0" style="width: 200px;">+82 010-2429-8020</p>
+                            </div>
+                            <!--
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-primary btn-square me-2" href="#"
+                                ><i class="fab fa-twitter fw-normal"></i
+                                ></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"
+                                ><i class="fab fa-facebook-f fw-normal"></i
+                                ></a>
+                                <a class="btn btn-primary btn-square me-2" href="#"
+                                ><i class="fab fa-linkedin-in fw-normal"></i
+                                ></a>
+                                <a class="btn btn-primary btn-square" href="#"
+                                ><i class="fab fa-instagram fw-normal"></i
+                                ></a>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <div class="position-relative ms-5">
+                        <a th:href="@{/admin/login}" class="text-white">관리자 로그인</a>
+                    </div>
 
 
-      <!-- Footer End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429">
+        <div class="container text-center">
+            <div class="row justify-content-start">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center" style="height: 75px; justify-content: flex-start">
+                        <p class="mb-0 me-2">
+                            &copy;
+                            <a class="text-white border-bottom" href="#">Growith.net</a>.
+                            All Rights Reserved.
+                        </p>
+                        <p class="mb-0 me-2">
+                            Designed by
+                            <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        </p>
+                        <p class="mb-0">
+                            Distributed By:
+                            <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        </p>
+                        <p class="mb-0 ms-3">
+                            Template by
+                            <a class="border-bottom" href="https://templatemo.com/tm-574-mexant" target="_blank">Mexant</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
 
     <!-- Back to Top -->
