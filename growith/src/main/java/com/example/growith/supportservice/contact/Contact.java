@@ -1,6 +1,5 @@
 package com.example.growith.supportservice.contact;
 
-import com.example.growith.supportservice.PhoneNumber;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -30,9 +29,6 @@ public class Contact {
     @NotEmpty(message = "제목을 입력해주세요.")
     private String subject;
 
-    @PhoneNumber
-    @NotEmpty(message = "전화번호를 입력해주세요.")
-    private String phone;
 
     private String content;
     private LocalDateTime date;
