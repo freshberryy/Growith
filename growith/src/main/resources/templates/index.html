@@ -195,7 +195,7 @@
             <h1 class="mb-0">저희 회사를 소개합니다</h1>
         </div>
         <div class="request-quote-container text-center mb-4">
-            <button class="btn btn-primary py-2 px-4 mt-2" th:onclick="'location.href=\'' + @{/about/overview} + '\''">GROWITH 더 알아보기</button>
+            <a th:href="@{/about/overview}" class="btn btn-primary py-3 px-5 mt-3">Growith 더 알아보기</a>
         </div>
         <div class="row g-5">
             <div class="col-lg-3">
@@ -414,6 +414,11 @@
                             -->
                         </div>
                     </div>
+                    <div class="position-relative ms-5">
+                        <a th:href="@{/admin/login}" class="text-white">관리자 로그인</a>
+                    </div>
+
+
                 </div>
             </div>
         </div>
