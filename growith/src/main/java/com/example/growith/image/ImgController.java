@@ -13,11 +13,13 @@ import org.springframework.web.multipart.MultipartFile;
 public class ImgController {
     @Autowired
     private ImgService imgService;
-    @Value("growith.s3.ap-northeast-2.amazonaws.com/")
+    @Value("${cloud.aws.s3.endpoint}")
     private String downpath;
 
     @GetMapping("/image")
-    public String create(){
+    public String create(Model model){
+    	model.addAttribute("images", imgService.readlist());
+        model.addAttribute("downpath","https://" +  downpath);
         return "admin_image";
     }
 
@@ -31,12 +33,12 @@ public class ImgController {
         return "redirect:/admin/image";
     }
 
-    @GetMapping("readlist")
-    public String readlist(Model model){
-        model.addAttribute("images", imgService.readlist());
-        model.addAttribute("downpath","https://" +  downpath);
-        return "admin_image";
-    }
+//    @GetMapping("readlist")
+//    public String readlist(Model model){
+//        model.addAttribute("images", imgService.readlist());
+//        model.addAttribute("downpath","https://" +  downpath);
+//        return "admin_image";
+//    }
 
     @GetMapping("/image/{id}")
     public String update(@PathVariable Integer id, Model model){
