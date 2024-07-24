@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Growith - support_announcements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Growith, announcements, support" />
+    <meta name="description" content="Growith support announcements page" />
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+            rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link
+            href="/lib/owlcarousel/assets/owl.carousel.min.css"
+            rel="stylesheet"
+    />
+    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+    />
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
+    />
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+            defer
+    ></script>
+
+    <!-- css second template -->
+    <!-- Bootstrap core CSS -->
+
+    <!-- Additional CSS Files -->
+
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+
+    <!--
+
+TemplateMo 574 Mexant
+
+https://templatemo.com/tm-574-mexant
+
+-->
+    <style>
+        .accordion-head {
+            padding: 35px 0px !important;
+            font-size: 22px;
+            font-weight: 600;
+            color: #212741;
+            cursor: pointer;
+            transition: color 200ms ease-in-out;
+        }
+
+        @media screen and (min-width: 768px) {
+            .accordion-head {
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
+        }
+
+        .accordion-head .icon {
+            float: right;
+            transition: transform 200ms ease-in-out;
+        }
+
+        .accordion-head.is-open {
+            color: #43ba7f;
+            border-bottom: none;
+        }
+
+        .accordion-head.is-open .icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-body {
+            padding: 0px;
+            overflow: hidden;
+            height: 0;
+            transition: height 300ms ease-in-out;
+            border-bottom: 1px solid #fff;
+        }
+
+        .accordion-body > .content p {
+            padding: 0px 0px 30px 0px;
+            padding-top: 0;
+        }
+
+        section.top-section .left-image img {
+            border-radius: 10px;
+        }
+
+        section.top-section .accordions {
+            border-radius: 5px;
+            padding: 50px 40px;
+            background-color: #fff;
+            margin-left: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+<!-- Spinner Start -->
+<div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+>
+    <div class="spinner"></div>
+</div>
+<!-- Spinner End -->
+
+<!-- Top bar start -->
+
+<!-- Top bar end -->
+
+<!-- Navigation bar start -->
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="/" class="navbar-brand p-0">
+            <img
+                    src="/img/growith_logo_whitewhale.png"
+                    alt="Growith Whale Logo"
+                    class="whale-logo"
+                    style="height: 45px"
+            />
+            <!-- Whale logo -->
+            <img
+                    src="/img/growith_logo_white.png"
+                    alt="Growith Logo"
+                    class="main-logo"
+                    style="height: 30px"
+            />
+            <!-- Regular logo -->
+        </a>
+
+        <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse"
+        >
+            <span class="fa fa-bars"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <div class="nav-item dropdown">
+                    <a
+                            href="#"
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                    >Company</a
+                    >
+                    <div class="dropdown-menu m-0">
+                        <a th:href="@{/about/overview}" class="dropdown-item"
+                        >Overview</a
+                        >
+                        <a th:href="@{/about/team}" class="dropdown-item">Team</a>
+                        <a th:href="@{/about/history}" class="dropdown-item"
+                        >History</a
+                        >
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a
+                            href="#"
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                    >Projects</a
+                    >
+                    <div class="dropdown-menu m-0">
+                        <a th:href="@{/project/current}" class="dropdown-item"
+                        >Current Project - PADO</a
+                        >
+                        <a th:href="@{/project/projects}" class="dropdown-item"
+                        >Projects</a
+                        >
+                        <a th:href="@{/project/gallery}" class="dropdown-item"
+                        >Gallery</a
+                        >
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a
+                            href="#"
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                    >Support</a
+                    >
+                    <div class="dropdown-menu m-0">
+                        <a th:href="@{/support/notice}" class="dropdown-item"
+                        >Announcements</a
+                        >
+                        <a th:href="@{/support/faq}" class="dropdown-item">FAQ</a>
+                        <a th:href="@{/support/contact}" class="dropdown-item"
+                        >Contact</a
+                        >
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a
+                            href="#"
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                    >Investor Info</a
+                    >
+                    <div class="dropdown-menu m-0">
+                        <a th:href="@{/investor/details}" class="dropdown-item"
+                        >Investor Information</a
+                        >
+                        <a th:href="@{/investor/financial}" class="dropdown-item"
+                        >Financial Information</a
+                        >
+                        <a th:href="@{/investor/press}" class="dropdown-item"
+                        >Press</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div
+        class="container-fluid bg-primary py-5 bg-header"
+        style="margin-bottom: 90px"
+>
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">FAQ</h1>
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->
+
+<!-- Full Screen Search Start -->
+<section class="top-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-15 align-self-center">
+                <div class="accordions is-first-expanded">
+                    <article th:each="faq : ${faqs}" class="accordion">
+                        <div class="accordion-head">
+                            <h5 th:text="${faq.title}"></h5>
+                            <span class="icon">
+                    <i class="icon fa fa-chevron-right"></i>
+                  </span>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="content">
+                                <p th:text="${faq.content}"></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copyright-text">
+                    <p>Copyright © 2023 Growith All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

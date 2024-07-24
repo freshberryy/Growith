@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title layout:title-pattern="$LAYOUT_TITLE : $CONTENT_TITLE">Growith</title>
-	
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -29,16 +29,16 @@
 
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
-    
+
     <!-- 각 페이지의 script가 작성될 위치 -->
     <th:block layout:fragment="script"></th:block>
     <!-- 각 페이지의 css가 작성될 위치 -->
     <th:block layout:fragment="css"></th:block>
 </head>
 <body>
-<header th:replace="fragments/header :: header"></header>
+<header th:replace="fragments/en_header :: header"></header>
 <th:block layout:fragment="content"></th:block>
-<footer th:replace="fragments/footer :: footer"></footer>
+<footer th:replace="fragments/en_footer :: footer"></footer>
 
 
 </body>
