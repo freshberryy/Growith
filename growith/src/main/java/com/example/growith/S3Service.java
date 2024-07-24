@@ -17,7 +17,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 @Service
 public class S3Service {
 
-    @Value("awsteam1234")
+    @Value("growith")
     private String bucketName;
 
     @Autowired
