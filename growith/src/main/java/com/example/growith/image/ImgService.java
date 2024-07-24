@@ -15,12 +15,13 @@ public class ImgService {
     @Autowired
     private ImgRepository imgRepository;
     @Autowired
-    S3Service s3Service;
+    private S3Service s3Service;
 
     public void create(Image image, MultipartFile file1) throws Exception{
         UUID uuid = UUID.randomUUID();
         String fileName1 = uuid + "_" + file1.getOriginalFilename();
         s3Service.uploadfile(file1, fileName1);
+        image.setFileName(fileName1);
         this.imgRepository.save(image);
     }
 
