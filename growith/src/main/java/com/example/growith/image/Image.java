@@ -15,7 +15,7 @@ public class Image {
     private Integer id;
 
     private String fileName;
-    private String filePath;
+//    private String filePath;
     private boolean selected;
 
 }
