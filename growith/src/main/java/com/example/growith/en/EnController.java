@@ -46,5 +46,31 @@ public class EnController {
         return "/en/support_notice";
     }
 
+    @GetMapping("/support/faq")
+    public String faq() {
+        return "/en/support_faq";
+    }
+
+    @GetMapping("/support/contact")
+    public String contact() {
+        return "/en/support_contact";
+    }
+
+    @GetMapping("/investor/info/details")
+    public String details() {
+        return "/en/investor_info_details";
+    }
+
+    @GetMapping("/investor/info/financial")
+    public String financial() {
+        return "/en/investor_info_financial";
+    }
+
+    @GetMapping("/investor/info/press")
+    public String press() {
+        return "/en/investor_info_press";
+    }
+
+
 
 }

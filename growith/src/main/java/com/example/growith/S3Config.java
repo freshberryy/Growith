@@ -13,10 +13,10 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 //현재 미사용
 @Configuration
 public class S3Config {
-    @Value("")
+    @Value("${aws.accessKeyId}")
     private String awsAccesskey;
 
-    @Value("")
+    @Value("${aws.secretAccessKey}")
     private String awsSecretkey;
 
     @Value("ap-northeast-2")
