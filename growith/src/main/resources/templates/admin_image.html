@@ -210,11 +210,14 @@
 									<td><img th:src="|${downpath}/${image.fileName}|"
 										alt="Image" width="100"></td>
                   <td th:text="${image.selected}"></td>
+
 									<td>
                     <a class="btn btn-danger" th:href="@{/admin/delete/{id}(id=${image.id})}">Delete</a>
                     <a class="btn btn-danger" th:href="@{/admin/image/{id}(id=${image.id})}">Update</a>
 
-										<a class="btn btn-primary" th:href="@{/admin/select/{id}(id=${image.id})}">Select for Index</a>
+
+
+					<a class="btn btn-primary" th:href="@{/admin/select/{id}(id=${image.id})}">Select for Index</a>
                     <a class="btn btn-primary" th:href="@{/admin/unselect/{id}(id=${image.id})}">Unselect for Index</a>
                   </td>
 								</tr>
