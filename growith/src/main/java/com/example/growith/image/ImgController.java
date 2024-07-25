@@ -1,5 +1,6 @@
 package com.example.growith.image;
 
+import com.example.growith.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.io.IOException;
 
 
 @RequestMapping("/admin")
@@ -16,6 +19,8 @@ public class ImgController {
     private ImgService imgService;
     @Value("${cloud.aws.s3.endpoint}")
     private String downpath;
+    @Autowired
+    private S3Service s3Service;
 
     @GetMapping("/image")
     public String create(Model model){
@@ -51,6 +56,13 @@ public class ImgController {
     @PostMapping("/image/{id}")
     public String update(@PathVariable Integer id, @ModelAttribute Image image, @RequestParam("file") MultipartFile file) throws Exception {
         imgService.update(id, image, file);
+        return "redirect:/admin/image";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) throws IOException {
+        s3Service.deletefile(imgService.findById(id).getFileName());
+        imgService.delete(id);
         return "redirect:/admin/image";
     }
 
