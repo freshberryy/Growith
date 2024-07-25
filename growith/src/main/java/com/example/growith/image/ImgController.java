@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @RequestMapping("/admin")
@@ -53,9 +54,17 @@ public class ImgController {
         return "redirect:/admin/image";
     }
 
-    @GetMapping("select/{id}")
-    public String select(@PathVariable Integer id){
+    @GetMapping("/select/{id}")
+    public String select(@PathVariable Integer id, RedirectAttributes redirectAttributes){
         imgService.selectImage(id);
-        return "redirect:/admin/readlist";
+        redirectAttributes.addFlashAttribute("message", "Image selected successfully");
+        return "redirect:/admin/image";
+    }
+
+    @GetMapping("/unselect/{id}")
+    public String unselect(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+        imgService.unselectImage(id);
+        redirectAttributes.addFlashAttribute("message", "Image unselected successfully");
+        return "redirect:/admin/image";
     }
 }
