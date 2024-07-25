@@ -44,6 +44,10 @@ public class ImgService {
         this.imgRepository.save(image1);
     }
 
+    public void delete(Integer id){
+        this.imgRepository.deleteById(id);
+    }
+
     public void selectImage(Integer id) {
 //        List<Image> images = imgRepository.findAll();
 //        for (Image img : images) {
