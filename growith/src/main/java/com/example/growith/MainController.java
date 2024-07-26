@@ -14,8 +14,8 @@ public class MainController {
     private ImgService imgService;
     @GetMapping("/")
     public String index(Model model) {
-        Image selectedImage = imgService.getSelectedImage();
-        model.addAttribute("selectedImage", selectedImage);
+//        Image selectedImage = imgService.getSelectedImage();
+//        model.addAttribute("selectedImage", selectedImage);
         return "index";
     }
 }

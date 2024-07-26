@@ -44,17 +44,28 @@ public class ImgService {
         this.imgRepository.save(image1);
     }
 
-    public void selectImage(Integer id) {
-        List<Image> images = imgRepository.findAll();
-        for (Image img : images) {
-            img.setSelected(false);
-        }
-        Image selectedImage = findById(id);
-        selectedImage.setSelected(true);
-        imgRepository.saveAll(images);
+    public void delete(Integer id){
+        this.imgRepository.deleteById(id);
     }
 
-    public Image getSelectedImage(){
-        return imgRepository.findBySelected(true).orElse(null);
+    public void selectImage(Integer id) {
+//        List<Image> images = imgRepository.findAll();
+//        for (Image img : images) {
+//            img.setSelected(false);
+//        }
+        Image selectedImage = findById(id);
+        selectedImage.setSelected(true);
+        imgRepository.save(selectedImage);
+//        imgRepository.saveAll(images);
+    }
+
+    public void unselectImage(Integer id) {
+        Image selectedImage = findById(id);
+        selectedImage.setSelected(false);
+        imgRepository.save(selectedImage);
+    }
+
+    public List<Image> getSelectedImage(){
+        return imgRepository.findBySelected(true);
     }
 }

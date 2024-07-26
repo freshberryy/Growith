@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,10 @@ public class S3Service {
 
         //임시 저장된 사진 삭제
         file.delete();
+    }
+
+    public void deletefile(String filename) throws IOException{
+        amazonS3.deleteObject(new DeleteObjectRequest(bucketName, filename));
     }
 }
 
