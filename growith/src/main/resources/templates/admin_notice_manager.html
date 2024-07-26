@@ -286,16 +286,10 @@
                         <div class="accordion-body">
                             <div class="content">
                                 <p th:utext="${notice.content}"></p>
-                                <a
-                                        class="btn btn-warning btn-sm"
-                                        th:href="@{|/admin/notice/update/noticeID=${notice.getId()}|}"
-                                >수정</a
-                                >
-                                <a
-                                        class="btn btn-danger btn-sm"
-                                        th:href="@{|/admin/notice/delete/noticeID=${notice.getId()}|}"
-                                >삭제</a
-                                >
+                                <a class="btn btn-warning btn-sm"
+                                        th:href="@{|/admin/notice/update/noticeID=${notice.getId()}|}">수정</a>
+                                <a class="btn btn-danger btn-sm"
+                                        th:href="@{|/admin/notice/delete/noticeID=${notice.getId()}|}">삭제</a>
                             </div>
                         </div>
                     </article>

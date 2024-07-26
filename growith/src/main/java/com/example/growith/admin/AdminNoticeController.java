@@ -87,8 +87,11 @@ public class AdminNoticeController {
 
     @PostMapping("/update")
     public String noticeUpdate(@ModelAttribute Notice notice) {
-        String sanitizedContent = htmlSanitizerService.sanitizeHtml(notice.getContent());
-        notice.setContent(sanitizedContent);
+		/*
+		 * String sanitizedContent =
+		 * htmlSanitizerService.sanitizeHtml(notice.getContent());
+		 * notice.setContent(sanitizedContent)
+		 */
         adminNoticeService.updateNotice(notice);
         return "redirect:/admin/notice/manager";
     }
